@@ -42,21 +42,86 @@ export default function AICompanion() {
       timestamp: new Date(),
     };
 
-    setMessages((prev) => [...prev, userMessage]);
+    const newMessages = [...messages, userMessage];
+    setMessages(newMessages);
     setInput("");
     setIsLoading(true);
 
-    // Simulate AI response (replace with real API call later)
-    setTimeout(() => {
-      const aiMessage: ChatMessage = {
-        id: (Date.now() + 1).toString(),
-        role: "assistant",
-        content: `这是对 "${userMessage.content}" 的模拟回答。\n\n在实际实现中，这里会调用 Claude API，基于知识库内容生成准确的回答。`,
-        timestamp: new Date(),
-      };
-      setMessages((prev) => [...prev, aiMessage]);
+    try {
+      // Build conversation history (last 20 messages to stay within context)
+      const history = newMessages.slice(-20).map((m) => ({
+        role: m.role,
+        content: m.content,
+      }));
+
+      const response = await fetch("/api/ai/chat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ messages: history }),
+      });
+
+      if (!response.ok) {
+        throw new Error(await response.text());
+      }
+
+      // Read SSE stream
+      const reader = response.body?.getReader();
+      if (!reader) throw new Error("No response body");
+
+      const decoder = new TextDecoder();
+      const aiId = (Date.now() + 1).toString();
+      let aiContent = "";
+
+      // Add placeholder AI message
+      setMessages((prev) => [
+        ...prev,
+        {
+          id: aiId,
+          role: "assistant",
+          content: "",
+          timestamp: new Date(),
+        },
+      ]);
+
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+
+        const chunk = decoder.decode(value, { stream: true });
+        const lines = chunk.split("\n");
+
+        for (const line of lines) {
+          if (line.startsWith("data: ")) {
+            try {
+              const data = JSON.parse(line.slice(6));
+              if (data.type === "delta" && data.text) {
+                aiContent += data.text;
+                setMessages((prev) =>
+                  prev.map((m) =>
+                    m.id === aiId ? { ...m, content: aiContent } : m
+                  )
+                );
+              }
+            } catch {
+              // skip unparseable lines
+            }
+          }
+        }
+      }
+    } catch (err) {
+      console.error("AI Chat error:", err);
+      setMessages((prev) => [
+        ...prev,
+        {
+          id: (Date.now() + 2).toString(),
+          role: "assistant",
+          content: "抱歉，AI 服务暂时不可用，请稍后重试。",
+          timestamp: new Date(),
+        },
+      ]);
+    } finally {
       setIsLoading(false);
-    }, 1500);
+    }
   };
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
@@ -76,7 +141,7 @@ export default function AICompanion() {
           className="fixed right-4 bottom-4 z-50 h-12 w-12 rounded-full shadow-lg"
           onClick={() => setIsOpen(true)}
         >
-          <Sparkles className="h-5 w-5" />
+          <PanelRightOpen className="h-5 w-5" />
         </Button>
       )}
 
@@ -90,7 +155,7 @@ export default function AICompanion() {
         {/* Header */}
         <div className="flex h-14 items-center justify-between border-b px-4">
           <div className="flex items-center gap-2">
-            <Bot className="h-5 w-5 text-primary" />
+            <Sparkles className="h-5 w-5 text-primary" />
             <span className="font-semibold">AI 研究伙伴</span>
           </div>
           <Button
@@ -135,15 +200,19 @@ export default function AICompanion() {
                       : "bg-muted"
                   )}
                 >
-                  {msg.content.split("\n").map((line, i) => (
-                    <p key={i} className={i > 0 ? "mt-2" : ""}>
-                      {line}
-                    </p>
-                  ))}
+                  {msg.content ? (
+                    msg.content.split("\n").map((line, i) => (
+                      <p key={i} className={i > 0 ? "mt-2" : ""}>
+                        {line}
+                      </p>
+                    ))
+                  ) : (
+                    <span className="animate-pulse">...</span>
+                  )}
                 </div>
               </div>
             ))}
-            {isLoading && (
+            {isLoading && !messages.some((m) => m.content === "") && (
               <div className="flex gap-3">
                 <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-muted">
                   <Bot className="h-4 w-4 animate-pulse" />
