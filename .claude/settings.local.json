@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git clone *)",
+      "Bash(git init *)",
+      "Bash(git config *)",
+      "Bash(npm --version)",
+      "Bash(npx create-next-app@latest *)",
+      "Bash(npx shadcn@latest init --yes --defaults)",
+      "Bash(npm install *)",
+      "Bash(bash *)",
+      "Bash(npx shadcn@latest *)",
+      "Bash(npm run *)",
+      "Bash(git rm *)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)"
+    ]
+  }
+}
