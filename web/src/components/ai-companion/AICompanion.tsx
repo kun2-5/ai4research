@@ -28,7 +28,10 @@ export default function AICompanion() {
   // Auto-scroll to bottom
   useEffect(() => {
     if (scrollRef.current) {
-      scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
+      const vp = scrollRef.current.querySelector(
+        '[data-slot="scroll-area-viewport"]'
+      ) as HTMLElement | null;
+      if (vp) vp.scrollTop = vp.scrollHeight;
     }
   }, [messages]);
 
