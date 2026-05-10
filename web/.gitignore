@@ -30,6 +30,9 @@ yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
+# wiki data (synced from server, not committed)
+/wiki-data/
+
 # env files (can opt-in for committing if needed)
 .env*
 

@@ -10,6 +10,7 @@ interface ConceptCardProps {
 
 export default function ConceptCard({ concept }: ConceptCardProps) {
   return (
+    <Link href={`/knowledge/concepts/${concept.id}`}>
     <Card className="group hover:shadow-md transition-shadow cursor-pointer border hover:border-primary/50">
       <CardHeader className="pb-3">
         <div className="flex items-start justify-between gap-2">
@@ -46,5 +47,6 @@ export default function ConceptCard({ concept }: ConceptCardProps) {
         </div>
       </CardContent>
     </Card>
+    </Link>
   );
 }

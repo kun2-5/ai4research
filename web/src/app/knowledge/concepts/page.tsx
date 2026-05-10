@@ -1,16 +1,24 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Input } from "@/components/ui/input";
-import { Badge } from "@/components/ui/badge";
 import ConceptCard from "@/components/knowledge/ConceptCard";
-import { mockConcepts } from "@/lib/data/mock";
-import { Search, BookOpen } from "lucide-react";
+import type { Concept } from "@/types";
+import { Search, BookOpen, Loader2 } from "lucide-react";
 
 export default function ConceptsPage() {
+  const [concepts, setConcepts] = useState<Concept[]>([]);
+  const [loading, setLoading] = useState(true);
   const [search, setSearch] = useState("");
 
-  const filtered = mockConcepts.filter((c) => {
+  useEffect(() => {
+    fetch("/api/concepts")
+      .then((res) => res.json())
+      .then(setConcepts)
+      .finally(() => setLoading(false));
+  }, []);
+
+  const filtered = concepts.filter((c) => {
     const q = search.toLowerCase();
     return (
       c.name.toLowerCase().includes(q) ||
@@ -27,7 +35,7 @@ export default function ConceptsPage() {
           <h1 className="text-2xl font-bold tracking-tight">概念卡片</h1>
         </div>
         <p className="text-muted-foreground">
-          已抽取 {mockConcepts.length} 个核心概念，支持中英双语检索
+          已抽取 {concepts.length} 个核心概念，支持中英双语检索
         </p>
       </div>
 
@@ -41,7 +49,11 @@ export default function ConceptsPage() {
         />
       </div>
 
-      {filtered.length === 0 ? (
+      {loading ? (
+        <div className="flex justify-center py-12">
+          <Loader2 className="h-6 w-6 animate-spin text-muted-foreground" />
+        </div>
+      ) : filtered.length === 0 ? (
         <div className="text-center py-12 text-muted-foreground">
           未找到匹配的概念
         </div>

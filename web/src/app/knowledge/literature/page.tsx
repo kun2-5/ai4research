@@ -1,28 +1,34 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import LiteratureCard from "@/components/knowledge/LiteratureCard";
-import { mockLiterature, tierColors, tierLabels } from "@/lib/data/mock";
+import { tierColors, tierLabels } from "@/lib/data/mock";
 import type { Literature } from "@/types";
-import { Search, FileText } from "lucide-react";
+import { Search, FileText, Loader2 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 type TierFilter = Literature["tier"] | "All";
 
 export default function LiteraturePage() {
+  const [papers, setPapers] = useState<Literature[]>([]);
+  const [loading, setLoading] = useState(true);
   const [search, setSearch] = useState("");
   const [tierFilter, setTierFilter] = useState<TierFilter>("All");
 
-  const filtered = mockLiterature.filter((p) => {
+  useEffect(() => {
+    fetch("/api/literature")
+      .then((res) => res.json())
+      .then(setPapers)
+      .finally(() => setLoading(false));
+  }, []);
+
+  const filtered = papers.filter((p) => {
     const matchesSearch =
       !search ||
       p.title.toLowerCase().includes(search.toLowerCase()) ||
-      p.abstract?.toLowerCase().includes(search.toLowerCase()) ||
-      p.authors?.some((a) =>
-        a.toLowerCase().includes(search.toLowerCase())
-      );
+      p.concepts?.some((c) => c.toLowerCase().includes(search.toLowerCase()));
     const matchesTier = tierFilter === "All" || p.tier === tierFilter;
     return matchesSearch && matchesTier;
   });
@@ -37,11 +43,10 @@ export default function LiteraturePage() {
           <h1 className="text-2xl font-bold tracking-tight">文献库</h1>
         </div>
         <p className="text-muted-foreground">
-          收录 {mockLiterature.length} 篇文献，按重要性四级分级
+          收录 {papers.length} 篇文献，按重要性四级分级
         </p>
       </div>
 
-      {/* Tier Filter */}
       <div className="flex flex-wrap gap-2 mb-4">
         {tiers.map((tier) => (
           <Badge
@@ -56,7 +61,7 @@ export default function LiteraturePage() {
             {tier === "All" ? "全部" : tierLabels[tier]}
             {tier !== "All" && (
               <span className="ml-1 opacity-70">
-                ({mockLiterature.filter((p) => p.tier === tier).length})
+                ({papers.filter((p) => p.tier === tier).length})
               </span>
             )}
           </Badge>
@@ -66,14 +71,18 @@ export default function LiteraturePage() {
       <div className="relative mb-6">
         <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
         <Input
-          placeholder="搜索标题、作者或摘要..."
+          placeholder="搜索标题或相关概念..."
           value={search}
           onChange={(e) => setSearch(e.target.value)}
           className="pl-10"
         />
       </div>
 
-      {filtered.length === 0 ? (
+      {loading ? (
+        <div className="flex justify-center py-12">
+          <Loader2 className="h-6 w-6 animate-spin text-muted-foreground" />
+        </div>
+      ) : filtered.length === 0 ? (
         <div className="text-center py-12 text-muted-foreground">
           未找到匹配的文献
         </div>

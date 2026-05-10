@@ -1,27 +1,55 @@
+"use client";
+
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { mockConcepts, mockLiterature, tierLabels } from "@/lib/data/mock";
+import { tierLabels } from "@/lib/data/mock";
+import type { Literature } from "@/types";
 import {
   BookOpen,
   Lightbulb,
   FlaskConical,
   ArrowRight,
   Sparkles,
+  Loader2,
 } from "lucide-react";
 
+interface Stats {
+  conceptCount: number;
+  literatureCount: number;
+  coreCount: number;
+  importantCount: number;
+}
+
 export default function DashboardPage() {
-  const corePapers = mockLiterature.filter((p) => p.tier === "Core");
-  const conceptCount = mockConcepts.length;
-  const paperCount = mockLiterature.length;
-  const importantCount = mockLiterature.filter(
-    (p) => p.tier === "Important"
-  ).length;
+  const [stats, setStats] = useState<Stats | null>(null);
+  const [corePapers, setCorePapers] = useState<Literature[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    Promise.all([
+      fetch("/api/stats").then((r) => r.json()),
+      fetch("/api/literature?tier=Core").then((r) => r.json()),
+    ])
+      .then(([s, papers]) => {
+        setStats(s);
+        setCorePapers(papers);
+      })
+      .finally(() => setLoading(false));
+  }, []);
+
+  if (loading) {
+    return (
+      <div className="flex-1 overflow-auto p-8 flex justify-center items-center">
+        <Loader2 className="h-8 w-8 animate-spin text-muted-foreground" />
+      </div>
+    );
+  }
 
   return (
     <div className="flex-1 overflow-auto p-8">
-      {/* Header */}
       <div className="mb-8">
         <h1 className="text-3xl font-bold tracking-tight mb-2">
           欢迎回到 ResearchOS
@@ -36,7 +64,7 @@ export default function DashboardPage() {
         <Card>
           <CardHeader className="pb-2">
             <CardDescription>知识库概念</CardDescription>
-            <CardTitle className="text-3xl">{conceptCount}</CardTitle>
+            <CardTitle className="text-3xl">{stats?.conceptCount}</CardTitle>
           </CardHeader>
           <CardContent>
             <p className="text-xs text-muted-foreground">
@@ -47,7 +75,7 @@ export default function DashboardPage() {
         <Card>
           <CardHeader className="pb-2">
             <CardDescription>收录文献</CardDescription>
-            <CardTitle className="text-3xl">{paperCount}</CardTitle>
+            <CardTitle className="text-3xl">{stats?.literatureCount}</CardTitle>
           </CardHeader>
           <CardContent>
             <p className="text-xs text-muted-foreground">
@@ -58,7 +86,7 @@ export default function DashboardPage() {
         <Card>
           <CardHeader className="pb-2">
             <CardDescription>核心文献</CardDescription>
-            <CardTitle className="text-3xl">{corePapers.length}</CardTitle>
+            <CardTitle className="text-3xl">{stats?.coreCount}</CardTitle>
           </CardHeader>
           <CardContent>
             <p className="text-xs text-muted-foreground">
@@ -69,7 +97,7 @@ export default function DashboardPage() {
         <Card>
           <CardHeader className="pb-2">
             <CardDescription>重要贡献</CardDescription>
-            <CardTitle className="text-3xl">{importantCount}</CardTitle>
+            <CardTitle className="text-3xl">{stats?.importantCount}</CardTitle>
           </CardHeader>
           <CardContent>
             <p className="text-xs text-muted-foreground">
@@ -142,11 +170,6 @@ export default function DashboardPage() {
                 </Badge>
               </div>
             </CardHeader>
-            <CardContent>
-              <p className="text-sm text-muted-foreground line-clamp-2">
-                {paper.abstract}
-              </p>
-            </CardContent>
           </Card>
         ))}
       </div>

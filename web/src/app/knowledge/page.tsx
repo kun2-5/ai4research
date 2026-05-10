@@ -2,8 +2,12 @@ import Link from "next/link";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, BookOpen, Network, FileText } from "lucide-react";
+import { getWikiStats, getConcepts } from "@/lib/wiki/reader";
 
 export default function KnowledgeSpacePage() {
+  const stats = getWikiStats();
+  const concepts = getConcepts();
+
   return (
     <div className="flex-1 overflow-auto p-8">
       <div className="mb-8">
@@ -20,7 +24,7 @@ export default function KnowledgeSpacePage() {
               <BookOpen className="h-10 w-10 text-primary mb-2" />
               <CardTitle>概念卡片</CardTitle>
               <CardDescription>
-                浏览 21 个核心概念，查看定义、别名和相关关系
+                浏览 {concepts.length} 个核心概念，查看定义、别名和相关关系
               </CardDescription>
             </CardHeader>
             <CardContent>
@@ -37,7 +41,7 @@ export default function KnowledgeSpacePage() {
               <FileText className="h-10 w-10 text-primary mb-2" />
               <CardTitle>文献库</CardTitle>
               <CardDescription>
-                按分级浏览收录文献，从核心到边缘
+                按分级浏览 {stats.literatureCount} 篇收录文献，从核心到边缘
               </CardDescription>
             </CardHeader>
             <CardContent>
