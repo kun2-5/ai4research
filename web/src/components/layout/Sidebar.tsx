@@ -18,6 +18,7 @@ import {
   ChevronRight,
   Hexagon,
   FileText,
+  Terminal,
 } from "lucide-react";
 
 interface NavItemDef {
@@ -30,6 +31,7 @@ interface NavItemDef {
 
 const mainNavItems: NavItemDef[] = [
   { label: "知识空间", href: "/knowledge", icon: BookOpen, badge: "MVP" },
+  { label: "Claude Code", href: "/claude", icon: Terminal, badge: "New" },
   { label: "洞察引擎", href: "/insights", icon: Lightbulb, badge: "Soon" },
   { label: "实验台", href: "/lab", icon: FlaskConical, badge: "Soon" },
   { label: "学者工坊", href: "/studio", icon: PenTool, badge: "Soon" },
