@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Sidebar from "@/components/layout/Sidebar";
-import AICompanion from "@/components/ai-companion/AICompanion";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,12 +28,8 @@ export default function RootLayout({
       lang="zh-CN"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="h-full flex bg-background text-foreground overflow-hidden">
-        <Sidebar />
-        <main className="flex-1 flex flex-col min-w-0 overflow-hidden">
-          {children}
-        </main>
-        <AICompanion />
+      <body className="h-full bg-background text-foreground overflow-hidden">
+        {children}
       </body>
     </html>
   );

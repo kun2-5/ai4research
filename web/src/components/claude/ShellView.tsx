@@ -16,12 +16,12 @@ export default function ShellView() {
     async function init() {
       try {
         const [{ Terminal }, { FitAddon }] = await Promise.all([
-          import("@xterm/xterm"),
+          import("xterm"),
           import("@xterm/addon-fit"),
         ]);
 
         // Import CSS
-        await import("@xterm/xterm/css/xterm.css");
+        await import("xterm/css/xterm.css");
 
         term = new Terminal({
           cursorBlink: true,
