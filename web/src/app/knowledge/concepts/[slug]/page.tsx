@@ -4,6 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { getConceptDetail, getConcepts } from "@/lib/wiki/reader";
 import { ArrowLeft, BookOpen, Calendar, Hash, Users } from "lucide-react";
+import ConceptInsight from "@/components/knowledge/ConceptInsight";
 
 // For static generation — list all concept slugs
 export function generateStaticParams() {
@@ -72,6 +73,11 @@ export default async function ConceptDetailPage({
             </span>
           )}
         </div>
+      </div>
+
+      {/* AI Insight */}
+      <div className="mb-8">
+        <ConceptInsight conceptSlug={slug} conceptName={concept.name} />
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">

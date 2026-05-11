@@ -17,9 +17,18 @@ import {
   ChevronLeft,
   ChevronRight,
   Hexagon,
+  FileText,
 } from "lucide-react";
 
-const mainNavItems = [
+interface NavItemDef {
+  label: string;
+  href: string;
+  icon: React.ComponentType<{ className?: string }>;
+  badge?: string;
+  external?: boolean;
+}
+
+const mainNavItems: NavItemDef[] = [
   { label: "知识空间", href: "/knowledge", icon: BookOpen, badge: "MVP" },
   { label: "洞察引擎", href: "/insights", icon: Lightbulb, badge: "Soon" },
   { label: "实验台", href: "/lab", icon: FlaskConical, badge: "Soon" },
@@ -27,7 +36,12 @@ const mainNavItems = [
   { label: "协作网络", href: "/nexus", icon: Users, badge: "Soon" },
 ];
 
-const bottomNavItems = [
+const bottomNavItems: NavItemDef[] = [
+  {
+    label: "开发文档",
+    href: "https://github.com/kun2-5/ai4research/blob/main/CLAUDE.md",
+    icon: FileText,
+  },
   { label: "设置", href: "/settings", icon: Settings },
 ];
 
@@ -79,7 +93,11 @@ export default function Sidebar() {
             const Icon = item.icon;
             const isActive = pathname?.startsWith(item.href);
             return (
-              <Link key={item.href} href={item.href}>
+              <Link
+                key={item.href}
+                href={item.href}
+                target={item.external ? "_blank" : undefined}
+              >
                 <div
                   className={cn(
                     "flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition-colors cursor-pointer",
@@ -126,7 +144,11 @@ export default function Sidebar() {
             const Icon = item.icon;
             const isActive = pathname?.startsWith(item.href);
             return (
-              <Link key={item.href} href={item.href}>
+              <Link
+                key={item.href}
+                href={item.href}
+                target={item.external ? "_blank" : undefined}
+              >
                 <div
                   className={cn(
                     "flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition-colors cursor-pointer",
