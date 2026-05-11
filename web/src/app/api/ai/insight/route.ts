@@ -66,6 +66,7 @@ export async function POST(request: NextRequest) {
             permissionMode: "bypassPermissions",
             maxTurns: 8,
             cwd: process.cwd(),
+            settingSources: ["project"],
           },
         });
 
