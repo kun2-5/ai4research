@@ -8,11 +8,11 @@ This is **ResearchOS** — an AI-native research operating system. The `web/` di
 
 ## Common Commands
 
-All development commands run from the `web/` directory:
+All commands run from the `web/` directory:
 
 ```bash
 cd web
-npm run dev        # Start dev server with Turbopack on localhost:3000
+npm run dev        # Start dev server on localhost:3000
 npm run build      # Production build
 npm run lint       # ESLint
 npm run start      # Production server (run after build)
@@ -26,185 +26,189 @@ npx shadcn@latest add <component-name>
 
 ## Architecture
 
-### Global Three-Column Layout
+### Route Groups
 
-The root `layout.tsx` defines a persistent three-column shell that **every page inherits**:
+Root `layout.tsx` provides `<html>`, `<body>`, and fonts only. Everything else is in route groups:
 
-- **Left**: `Sidebar` — collapsible navigation (client component, uses `usePathname` for active states)
-- **Center**: `main` — page-specific content
-- **Right**: `AICompanion` — chat panel (client component, toggleable)
+```
+src/app/
+├── layout.tsx               # Root: html + body + fonts
+├── (main)/
+│   ├── layout.tsx            # Three-column: Sidebar + content + AIAgent
+│   ├── page.tsx              # Dashboard
+│   └── knowledge/            # Knowledge Space
+├── api/                      # API routes (no layout inheritance)
+└── claude/                   # Deleted — removed in refactor
+```
 
-This means all pages automatically get the sidebar and AI chat. If you need a page without this layout (e.g., a login page), create a route group like `(auth)/` with its own `layout.tsx`.
+To create a page WITHOUT the three-column layout, add a sibling route group next to `(main)/` with its own `layout.tsx`.
 
-### Module Structure
+### Three-Column Layout
+
+Defined in `src/app/(main)/layout.tsx`:
+- **Left**: Sidebar — collapsible nav (client component)
+- **Center**: main — page content
+- **Right**: AICompanion — Claude Agent SDK powered panel (client component, SSE streaming)
+
+### Module Status
 
 | Route | Module | Status |
 |-------|--------|--------|
-| `/knowledge/*` | Knowledge Space | MVP — concepts, literature, concept detail |
+| `/knowledge/*` | Knowledge Space | ✅ 21 concepts, 150 papers, concept detail + AI insight |
 | `/insights` | Insight Engine | Not implemented |
 | `/lab` | LabBench | Not implemented |
 | `/studio` | Scholar Studio | Not implemented |
 | `/nexus` | Collaboration Network | Not implemented |
 
-### Data Flow (Current)
+## Data Flow
 
 ```
 wiki-data/ (synced from server /mnt/Data2/km/wiki)
-    ↓ src/lib/wiki/reader.ts (fs-based parser)
-    ├── Server Components (for read-only pages, e.g., knowledge landing)
+    ↓ src/lib/wiki/reader.ts (fs-based parser, 7 exported functions)
+    ├── Server Components (for read-only pages, e.g. knowledge landing)
     └── API Routes (for client components to fetch)
-            ↓ fetch()
+            ↓ fetch() or SSE
         Client Components (interactive pages with search/filter)
 ```
 
-**Two patterns for data loading**, choose based on the page type:
+**Two patterns for data loading:**
+1. **Server Component + direct reader call** — no client interactivity. See `src/app/(main)/knowledge/page.tsx`
+2. **Client Component + API fetch** — search/filter/state. See `src/app/(main)/knowledge/concepts/page.tsx`
 
-1. **Server Component + direct reader call** — for pages without client interactivity. See `src/app/knowledge/page.tsx` for the pattern: import `getWikiStats()` / `getConcepts()` directly, no API route needed.
+## AI Integration (Current)
 
-2. **Client Component + API fetch** — for pages with search/filter/state. See `src/app/knowledge/concepts/page.tsx` for the pattern: `useEffect` → `fetch("/api/concepts")`.
+AI is powered by `@anthropic-ai/claude-agent-sdk` via the `query()` async generator.
 
-### Type System
+### API Routes
 
-Shared types in `src/types/index.ts`:
-- `Concept` — wiki concept card (id, name, aliases, chineseEquivalent, description, relatedConcepts, linkedPapers)
-- `Literatur` — paper entry with four-tier classification (`"Core" | "Important" | "Relevant" | "Peripheral"`)
-- `ConceptDetail` — enriched concept with papers, timeline, controversies (from `reader.ts`)
-- `ChatMessage` — AI companion message format
+| Route | File | Purpose |
+|-------|------|---------|
+| `POST /api/ai/agent` | `api/ai/agent/route.ts` | Main chat — AICompanion uses this |
+| `POST /api/ai/insight` | `api/ai/insight/route.ts` | Concept research gap analysis |
+| `GET /api/concepts` | `api/concepts/route.ts` | Wiki concepts data |
+| `GET /api/literature` | `api/literature/route.ts` | Wiki literature data |
+| `GET /api/stats` | `api/stats/route.ts` | Wiki statistics |
 
----
+### Claude Code Configuration
 
-## Development Patterns (Templates for Team)
+Web Claude Code reads from project-level `.claude/settings.json` (NOT developer's `~/.claude/`). This is configured via `settingSources: ['project']` in the Agent SDK options.
 
-### Pattern A: Add a list page with client interactivity
+To add skills, plugins, or change permissions, edit `.claude/settings.json` — no code changes needed.
 
-Follow `src/app/knowledge/concepts/page.tsx`:
+### How to add a new AI-powered feature
+
+See `HOW_TO_DEVELOP.md` for the complete guide. TL;DR:
+1. Create `/api/ai/<name>/route.ts` — call `query()` with a specialized prompt, stream SSE
+2. Create a React component that fetches the API and renders the stream
+3. Embed the component in a page
+
+## Development Patterns
+
+### Pattern A: List page with client interactivity
+See `src/app/(main)/knowledge/concepts/page.tsx`
 1. `"use client"` directive
 2. `useState` + `useEffect` for data fetching from API route
-3. Loading state with `<Loader2>` spinner
-4. Empty state with friendly message
-5. Grid rendering of cards
+3. Loading state (`<Loader2>` spinner), empty state, error state
+4. Grid rendering of cards
 
-### Pattern B: Add a detail page (Server Component)
-
-Follow `src/app/knowledge/concepts/[slug]/page.tsx`:
-1. No `"use client"` — stays a Server Component
-2. `export function generateStaticParams()` for static generation
-3. Read data directly from `@/lib/wiki/reader`
+### Pattern B: Detail page (Server Component)
+See `src/app/(main)/knowledge/concepts/[slug]/page.tsx`
+1. No `"use client"` — Server Component
+2. `generateStaticParams()` for static generation
+3. Read data from `@/lib/wiki/reader`
 4. `notFound()` if slug doesn't match
-5. `params` is a Promise — use `await params`
-6. Breadcrumb navigation back to list page
+5. `params` is a Promise — `await params`
 
-### Pattern C: Add an API route
+### Pattern C: API route
+See `src/app/api/concepts/route.ts`
+1. Export `async function GET(request)` or `POST`
+2. Call reader functions or Agent SDK
+3. Return `NextResponse.json()` or SSE stream
 
-Follow `src/app/api/concepts/route.ts`:
-1. Create `src/app/api/<name>/route.ts`
-2. Export `async function GET(request: Request)`
-3. Call reader functions from `@/lib/wiki/reader`
-4. Return `NextResponse.json(data)`
-5. Use `request.url` + `new URL()` to parse query params
+### Pattern D: AI feature (button-triggered)
+See `src/components/knowledge/ConceptInsight.tsx`
+1. Client component with button + loading/result/error states
+2. `fetch("/api/ai/xxx", { method: "POST" })`
+3. Read SSE stream, update UI progressively
+4. Display tool calls with `ToolCallCard` component
 
-### Pattern D: Add a wiki reader function
-
-Follow existing functions in `src/lib/wiki/reader.ts`:
-1. Use `WIKI_DATA_PATH` config for path resolution
-2. Parse files synchronously (Node.js `fs` module)
-3. Return typed data matching `src/types/index.ts`
-4. Handle edge cases: missing files, empty data, format variations
-
-### Pattern E: Add a presentational card component
-
-Follow `src/components/knowledge/ConceptCard.tsx`:
+### Pattern E: Presentational card
+See `src/components/knowledge/ConceptCard.tsx`
 1. Receive typed props (no data fetching inside)
 2. Use shadcn `<Card>` components
-3. Wrap in `<Link>` if it navigates to a detail page
-4. Handle optional fields with conditional rendering
+3. Wrap in `<Link>` if navigating to detail page
 
----
+## Type System
 
-## Phase 1 Remaining Tasks (for Team Members)
-
-### 1. Literature Detail Page
-**Route**: `/knowledge/literature/[slug]/page.tsx`
-**Pattern**: Follow Pattern B (Concept Detail Page as template)
-**Data**: Use `getLiteratureById(id)` from reader.ts
-**Why this is next**: Completes the "list → detail" pattern, mirrors concept detail
-
-### 2. AI Companion — Real API Integration
-**Files**: `src/app/api/ai/chat/route.ts`, `src/components/ai-companion/AICompanion.tsx`
-**Pattern**: Follow Pattern C for the API route
-**Dependencies**: `@anthropic-ai/sdk` (already installed), `ANTHROPIC_API_KEY` env var
-**Approach**:
-1. Create streaming API route using Anthropic SDK
-2. Build system prompt from wiki context (concepts + literature)
-3. Replace `setTimeout` mock in AICompanion with real fetch
-4. Render streaming response in chat UI
-
-### 3. Knowledge Graph Visualization
-**Route**: `/knowledge/graph/page.tsx`
-**Library**: Install `cytoscape` and `react-cytoscapejs`
-**Data**: Use `getConcepts()` and `getLiterature()` to build nodes/edges
-**Approach**:
-1. Build graph data: concepts as nodes, shared papers as edges
-2. Interactive layout with Cytoscape.js
-3. Click node → navigate to detail page
-4. Color-code by tier / concept frequency
-
-### 4. Database Setup (PostgreSQL + pgvector)
-**Files**: New `src/lib/db/` directory with Drizzle schema
-**Approach**:
-1. Install `drizzle-orm`, `drizzle-kit`, `pg`
-2. Define schema: concepts, literature, concepts_to_literature
-3. Write import script: `scripts/import-wiki-to-db.ts`
-4. Add API routes that query the database instead of reading files
-5. Generate embeddings for semantic search
-
-### 5. Semantic Search
-**Route**: `GET /api/search?q=...`
-**Approach**:
-1. Embed query with embedding model
-2. Cosine similarity search in pgvector
-3. Return ranked results (concepts + literature)
-4. Search UI component in knowledge space
-
----
+`src/types/index.ts`:
+- `Concept` — concept card (id, name, aliases, chineseEquivalent, description, relatedConcepts, linkedPapers)
+- `Literature` — paper with tier (`"Core" | "Important" | "Relevant" | "Peripheral"`)
+- `ConceptDetail` — enriched concept with papers, timeline, controversies
+- `ChatMessage` — AI companion message format
 
 ## Wiki Data Reference
 
-### File Locations
+### Path Configuration
 
 | Environment | Path | Set via |
 |-------------|------|---------|
 | Local dev | `../wiki-data/` (auto-detected) | `src/lib/wiki/config.ts` |
-| Server | `/mnt/Data2/km/wiki/` | `WIKI_DATA_PATH` env var in `.env.local` |
+| Server | `/mnt/Data2/km/wiki/` | `WIKI_DATA_PATH` env var |
 
 ### Key Data Files
 
 | File | Content | Used by |
 |------|---------|---------|
 | `index.json` | 269 concepts with frequency, aliases, definitions | Reader fallback |
-| `concepts/*.md` | 21 curated concept cards with frontmatter, papers, timeline | `getConcepts()`, `getConceptDetail()` |
-| `index.md` | 150 papers with tier, title, year, concepts (April 25 build) | `getLiterature()` |
-| `document_importance.json` | 36 paper scores (April 18 build, partial) | Literature enrichment |
-| `.links/concept_index.json` | Concept-to-document mapping | `getConcepts()` linked papers |
+| `concepts/*.md` | 21 curated concept cards | `getConcepts()`, `getConceptDetail()` |
+| `index.md` | 150 papers with tier, title, year, concepts | `getLiterature()` |
+| `document_importance.json` | 36 paper scores (partial, April 18 build) | Literature enrichment |
+| `.links/concept_index.json` | Concept-to-document mapping | `getConcepts()` |
 | `.links/relationship_graph.json` | Document-to-document relationships | Future: knowledge graph |
 
-### Reader Functions
+### Reader Functions (`src/lib/wiki/reader.ts`)
 
 ```typescript
 getConcepts()                    // → Concept[]          (21 curated concepts)
 getConceptBySlug(slug)           // → Concept | null
-getConceptDetail(slug)           // → ConceptDetail | null (with papers, timeline)
+getConceptDetail(slug)           // → ConceptDetail | null (papers, timeline, controversies)
 getLiterature(tier?)             // → Literature[]       (150 papers, optional filter)
 getLiteratureById(id)            // → Literature | null
 getWikiStats()                   // → { conceptCount, literatureCount, coreCount, ... }
 ```
 
----
+## Phase 1 Remaining Tasks (for Team Members)
 
-## AI Integration (Planned)
+### 1. Literature Detail Page
+**Route**: `/knowledge/literature/[slug]/page.tsx`
+**Pattern**: Follow Pattern B (Concept Detail Page as template)
+**Data**: Use `getLiteratureById(id)` from reader.ts, enrich with concept_rel.json relationships
 
-`@anthropic-ai/sdk` is installed but not yet wired up. The `AICompanion` component in `src/components/ai-companion/AICompanion.tsx` currently simulates responses with `setTimeout`. The planned integration:
+### 2. Knowledge Graph Visualization
+**Route**: `/knowledge/graph/page.tsx`
+**Library**: `cytoscape` and `react-cytoscapejs` already installed
+**Data**: Use `getConcepts()` and `getLiterature()` to build nodes/edges
+**Approach**: Concepts as nodes, shared papers as edges, color-code by tier
 
-1. Create `src/app/api/ai/chat/route.ts` — streaming API route using Anthropic SDK
-2. Wire `AICompanion` to call the API route instead of simulating
-3. Pass wiki context as system prompt for RAG-style responses
+### 3. Database Setup (PostgreSQL + pgvector)
+**Files**: New `src/lib/db/` directory with Drizzle schema
+**Approach**: Install `drizzle-orm`, `drizzle-kit`, `pg`, define schema, write import script from wiki-data
+
+### 4. Semantic Search
+**Route**: `GET /api/search?q=...`
+**Approach**: Embed query, cosine similarity in pgvector, ranked results UI
+
+## Environment Variables
+
+```
+ANTHROPIC_API_KEY=sk-...         # API key (required)
+ANTHROPIC_BASE_URL=https://...   # Optional: custom endpoint
+ANTHROPIC_MODEL=model-name       # Optional: model override
+WIKI_DATA_PATH=/path/to/wiki     # Server deployment only
+```
+
+## Key Reference Documents
+
+- `HOW_TO_DEVELOP.md` — Complete guide for building AI features with Agent SDK
+- `PLAN.md` — Original product blueprint and phase roadmap
+- `.claude/settings.json` — Claude Code project configuration (permissions, skills, plugins)
