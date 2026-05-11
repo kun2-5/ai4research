@@ -4,7 +4,6 @@ import { useState, useRef, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
 import {
   Send,
@@ -13,18 +12,9 @@ import {
   PanelRightClose,
   PanelRightOpen,
   Sparkles,
-  Wrench,
-  Check,
 } from "lucide-react";
 import type { ChatMessage } from "@/types";
-
-interface ToolCall {
-  id: string;
-  name: string;
-  input?: unknown;
-  resultPreview?: string;
-  completed: boolean;
-}
+import ToolCallCard, { type ToolCall } from "./ToolCallCard";
 
 const initialMessages: ChatMessage[] = [
   {
@@ -130,7 +120,7 @@ export default function AICompanion() {
                 id: `tool-${Date.now()}-${currentToolCalls.length}`,
                 name: data.name || "unknown",
                 input: data.input,
-                completed: false,
+                done: false,
               };
               currentToolCalls = [...currentToolCalls, tc];
               setToolCalls((prev) => ({ ...prev, [aiId]: currentToolCalls }));
@@ -139,9 +129,9 @@ export default function AICompanion() {
 
             case "tool_result": {
               currentToolCalls = currentToolCalls.map((tc) =>
-                tc.completed
+                tc.done
                   ? tc
-                  : { ...tc, completed: true, resultPreview: data.preview }
+                  : { ...tc, done: true, result: data.preview }
               );
               setToolCalls((prev) => ({ ...prev, [aiId]: currentToolCalls }));
               break;
@@ -261,26 +251,11 @@ export default function AICompanion() {
                     </div>
                   </div>
 
-                  {/* Tool call indicators */}
+                  {/* Tool call cards */}
                   {msgTools.length > 0 && (
                     <div className="ml-11 mt-1.5 space-y-1">
                       {msgTools.map((tc) => (
-                        <div
-                          key={tc.id}
-                          className="flex items-center gap-1.5 text-[11px] text-muted-foreground"
-                        >
-                          {tc.completed ? (
-                            <Check className="h-3 w-3 text-green-500" />
-                          ) : (
-                            <Wrench className="h-3 w-3 animate-spin" />
-                          )}
-                          <span className="font-medium">{tc.name}</span>
-                          {tc.resultPreview && (
-                            <span className="truncate max-w-[200px]">
-                              — {tc.resultPreview}
-                            </span>
-                          )}
-                        </div>
+                        <ToolCallCard key={tc.id} tool={tc} />
                       ))}
                     </div>
                   )}
