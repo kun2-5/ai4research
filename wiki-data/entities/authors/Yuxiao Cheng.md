@@ -1,0 +1,10 @@
+---
+entity_type: author
+paper_count: 1
+---
+
+# Yuxiao Cheng
+
+## 论文列表
+
+- [[第4章__大语言模型__4.2.3 提示学习与指令微调 (Prompt Learning and Instruction Tuning)__Demystifying Instruction Mixing for Fine-tuning Large Language Models]] — *CausalTime: Realistically Generated Time-series for Benchmarking of Causal Discovery* (2007)

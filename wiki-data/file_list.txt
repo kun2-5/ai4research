@@ -1,0 +1,40 @@
+# Domain Wiki File List
+# Generated: 2026-04-18 03:53:51
+# Total Files: 36
+
+A Digital Twin of the terrestrial water cycle a glimpse into the future through high-resolution Earth observations.md
+A digital twin of Earth for the green transition.md
+A hybrid underwater robot for multidisciplinary investigation of the ocean twilight zone.md
+Accurate medium-range global weather forecasting with 3D neural networks.md
+Artificial Intelligence to Advance Earth Observation：A review of models, recent trends, and pathways forward.md
+Autonomous Agents for Scientific Discovery：Orchestrating Scientists, Language, Code, and Physics.md
+Autonomous GIS  the next-generation AI-powered GIS.md
+Benchmarking of Machine Learning Ocean Subgrid Parameterizations in an Idealized Model.md
+Causal inference for time series.md
+ClimaX：A Foundation Model for Weather and Climate.md
+Differentiable modelling to unify machine learning and physical models for geosciences.md
+Discovering Symbolic Models from Deep Learning with Inductive Biases.md
+Discovering causal relations and equations from data.md
+EarthGPT：A Universal Multi-modal Large Language Model for Earth Sciences.md
+Exploring the Viability of the Updated World3 Model for Examining the Impact of Computing on Planetary Boundaries.md
+FourCastNet：Accelerating Global High-Resolution Weather Forecasting Using Adaptive Fourier Neural Operators.md
+GenCast：Diffusion-based ensemble forecasting for medium-range weatherpdf.md
+GeoAgent  a hierarchical LLM-based multi-agent architecture for autonomous spatial analysis.md
+GeoLLM：Extracting Geospatial Knowledge from Large Language Models.md
+J Adv Model Earth Syst - 2024 - Swaminathan - A Machine Learning Framework to Evaluate Vegetation Modeling in Earth System.md
+K2：A Foundation Language Model for Geoscience Knowledge Understanding and Utilization.md
+Learning skillful medium-range global weather forecasting.md
+Neural general circulation models for weather and climate - 副本.md
+On the Opportunities and Challenges of Foundation Models for Geospatial Artificial Intelligence.md
+OpenVLA.md
+PaLM-E：An Embodied Multimodal Language Model.md
+Physics-informed machine learning：case studies for weather and climate modelling.md
+RT-2：Vision-Language-Action Models Transfer.md
+Scientific discovery in the age of artificial intelligence.md
+ShapefileGPT  a multi-agent large language model framework for automated shapefile processing.md
+Socratic Models：Composing Zero-Shot Multimodal Reasoning with Language.md
+StormDiT：A generative AI model bridges the 2-6 hour ’gray zone’ in precipitation nowcasting.md
+从大模型到世界模型 ：智能革命.md
+地外星表探测器着陆-巡视自主导航技术研究进展.md
+数字孪生流域++未来流域治理管理的新基建新范式.md
+生成式人工智能扩散模型在气象领域中的研究与应用进展.md

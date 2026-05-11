@@ -1,0 +1,2235 @@
+{
+  "A Digital Twin of the terrestrial water cycle a glimpse into the future through high-resolution Earth observations": {
+    "overall_score": 6.14,
+    "tier": "important",
+    "metrics": {
+      "concept_coverage": 10.0,
+      "centrality": 5.71,
+      "cross_reference_count": 71,
+      "core_concepts": 7,
+      "total_concepts": 7
+    },
+    "key_contributions": [
+      "Digital Twin Earth",
+      "Remote Sensing",
+      "flood forecasting",
+      "high-resolution data fusion",
+      "hydrology"
+    ],
+    "rank": 38
+  },
+  "A digital twin of Earth for the green transition": {
+    "overall_score": 5.64,
+    "tier": "relevant",
+    "metrics": {
+      "concept_coverage": 10.0,
+      "centrality": 5.73,
+      "cross_reference_count": 19,
+      "core_concepts": 7,
+      "total_concepts": 7
+    },
+    "key_contributions": [
+      "Data Assimilation",
+      "Destination Earth",
+      "Digital Twin",
+      "Earth system modeling",
+      "climate prediction"
+    ],
+    "rank": 61
+  },
+  "A hybrid underwater robot for multidisciplinary investigation of the ocean twilight zone": {
+    "overall_score": 5.6,
+    "tier": "relevant",
+    "metrics": {
+      "concept_coverage": 10.0,
+      "centrality": 5.75,
+      "cross_reference_count": 31,
+      "core_concepts": 7,
+      "total_concepts": 7
+    },
+    "key_contributions": [
+      "animal tracking",
+      "autonomous underwater vehicle",
+      "behavioral ecology",
+      "biological pump",
+      "hybrid robot"
+    ],
+    "rank": 62
+  },
+  "Accurate medium-range global weather forecasting with 3D neural networks": {
+    "overall_score": 5.25,
+    "tier": "relevant",
+    "metrics": {
+      "concept_coverage": 8.57,
+      "centrality": 5.74,
+      "cross_reference_count": 56,
+      "core_concepts": 3,
+      "total_concepts": 6
+    },
+    "key_contributions": [
+      "3D Neural Network",
+      "Numerical Weather Prediction",
+      "Weather Forecasting"
+    ],
+    "rank": 78
+  },
+  "Artificial Intelligence to Advance Earth Observation：A review of models, recent trends, and pathways forward": {
+    "overall_score": 5.68,
+    "tier": "relevant",
+    "metrics": {
+      "concept_coverage": 8.57,
+      "centrality": 5.74,
+      "cross_reference_count": 54,
+      "core_concepts": 2,
+      "total_concepts": 6
+    },
+    "key_contributions": [
+      "Earth Observation",
+      "Remote Sensing"
+    ],
+    "rank": 51
+  },
+  "Autonomous Agents for Scientific Discovery：Orchestrating Scientists, Language, Code, and Physics": {
+    "overall_score": 7.66,
+    "tier": "important",
+    "metrics": {
+      "concept_coverage": 10.0,
+      "centrality": 5.66,
+      "cross_reference_count": 77,
+      "core_concepts": 1,
+      "total_concepts": 7
+    },
+    "key_contributions": [
+      "Foundation Model"
+    ],
+    "rank": 10
+  },
+  "Autonomous GIS  the next-generation AI-powered GIS": {
+    "overall_score": 7.93,
+    "tier": "important",
+    "metrics": {
+      "concept_coverage": 10.0,
+      "centrality": 5.68,
+      "cross_reference_count": 86,
+      "core_concepts": 3,
+      "total_concepts": 7
+    },
+    "key_contributions": [
+      "Foundation Model",
+      "GeoAI",
+      "spatial analysis"
+    ],
+    "rank": 5
+  },
+  "Benchmarking of Machine Learning Ocean Subgrid Parameterizations in an Idealized Model": {
+    "overall_score": 4.57,
+    "tier": "relevant",
+    "metrics": {
+      "concept_coverage": 7.14,
+      "centrality": 5.74,
+      "cross_reference_count": 45,
+      "core_concepts": 1,
+      "total_concepts": 5
+    },
+    "key_contributions": [
+      "Symbolic Regression"
+    ],
+    "rank": 94
+  },
+  "Causal inference for time series": {
+    "overall_score": 5.42,
+    "tier": "relevant",
+    "metrics": {
+      "concept_coverage": 10.0,
+      "centrality": 5.74,
+      "cross_reference_count": 54,
+      "core_concepts": 1,
+      "total_concepts": 7
+    },
+    "key_contributions": [
+      "Causal Reasoning"
+    ],
+    "rank": 67
+  },
+  "ClimaX：A Foundation Model for Weather and Climate": {
+    "overall_score": 9.05,
+    "tier": "core",
+    "metrics": {
+      "concept_coverage": 10.0,
+      "centrality": 5.68,
+      "cross_reference_count": 81,
+      "core_concepts": 3,
+      "total_concepts": 7
+    },
+    "key_contributions": [
+      "Foundation Model",
+      "Transformer",
+      "Weather Forecasting"
+    ],
+    "rank": 1
+  },
+  "Differentiable modelling to unify machine learning and physical models for geosciences": {
+    "overall_score": 2.73,
+    "tier": "peripheral",
+    "metrics": {
+      "concept_coverage": 1.43,
+      "centrality": 5.75,
+      "cross_reference_count": 53,
+      "core_concepts": 0,
+      "total_concepts": 1
+    },
+    "key_contributions": [],
+    "rank": 122
+  },
+  "DiffusionSat - A Generative Foundation Model for Satellite Imagery": {
+    "overall_score": 6.94,
+    "tier": "important",
+    "metrics": {
+      "concept_coverage": 4.29,
+      "centrality": 6.22,
+      "cross_reference_count": 91,
+      "core_concepts": 3,
+      "total_concepts": 3
+    },
+    "key_contributions": [
+      "Diffusion Model",
+      "Foundation Model",
+      "Remote Sensing"
+    ],
+    "rank": 20
+  },
+  "Discovering Symbolic Models from Deep Learning with Inductive Biases": {
+    "overall_score": 5.65,
+    "tier": "relevant",
+    "metrics": {
+      "concept_coverage": 10.0,
+      "centrality": 5.78,
+      "cross_reference_count": 30,
+      "core_concepts": 3,
+      "total_concepts": 7
+    },
+    "key_contributions": [
+      "Graph Neural Network",
+      "Physics-Informed Machine Learning",
+      "Symbolic Regression"
+    ],
+    "rank": 57
+  },
+  "Discovering causal relations and equations from data": {
+    "overall_score": 5.12,
+    "tier": "relevant",
+    "metrics": {
+      "concept_coverage": 8.57,
+      "centrality": 5.73,
+      "cross_reference_count": 55,
+      "core_concepts": 2,
+      "total_concepts": 6
+    },
+    "key_contributions": [
+      "Causal Reasoning",
+      "Symbolic Regression"
+    ],
+    "rank": 80
+  },
+  "EarthGPT：A Universal Multi-modal Large Language Model for Earth Sciences": {
+    "overall_score": 5.88,
+    "tier": "relevant",
+    "metrics": {
+      "concept_coverage": 10.0,
+      "centrality": 5.71,
+      "cross_reference_count": 71,
+      "core_concepts": 1,
+      "total_concepts": 7
+    },
+    "key_contributions": [
+      "Remote Sensing"
+    ],
+    "rank": 43
+  },
+  "Exploring the Viability of the Updated World3 Model for Examining the Impact of Computing on Planetary Boundaries": {
+    "overall_score": 2.57,
+    "tier": "peripheral",
+    "metrics": {
+      "concept_coverage": 8.57,
+      "centrality": 0,
+      "cross_reference_count": 0,
+      "core_concepts": 0,
+      "total_concepts": 6
+    },
+    "key_contributions": [],
+    "rank": 123
+  },
+  "FourCastNet：Accelerating Global High-Resolution Weather Forecasting Using Adaptive Fourier Neural Operators": {
+    "overall_score": 4.95,
+    "tier": "relevant",
+    "metrics": {
+      "concept_coverage": 8.57,
+      "centrality": 5.74,
+      "cross_reference_count": 54,
+      "core_concepts": 1,
+      "total_concepts": 6
+    },
+    "key_contributions": [
+      "Ensemble Forecasting"
+    ],
+    "rank": 84
+  },
+  "GenCast：Diffusion-based ensemble forecasting for medium-range weatherpdf": {
+    "overall_score": 5.05,
+    "tier": "relevant",
+    "metrics": {
+      "concept_coverage": 10.0,
+      "centrality": 4.26,
+      "cross_reference_count": 7,
+      "core_concepts": 3,
+      "total_concepts": 7
+    },
+    "key_contributions": [
+      "Diffusion Model",
+      "ERA5 reanalysis",
+      "Ensemble Forecasting"
+    ],
+    "rank": 82
+  },
+  "GeoAgent  a hierarchical LLM-based multi-agent architecture for autonomous spatial analysis": {
+    "overall_score": 7.92,
+    "tier": "important",
+    "metrics": {
+      "concept_coverage": 10.0,
+      "centrality": 5.66,
+      "cross_reference_count": 68,
+      "core_concepts": 3,
+      "total_concepts": 7
+    },
+    "key_contributions": [
+      "Foundation Model",
+      "GeoAI",
+      "spatial analysis"
+    ],
+    "rank": 6
+  },
+  "GeoLLM：Extracting Geospatial Knowledge from Large Language Models": {
+    "overall_score": 7.67,
+    "tier": "important",
+    "metrics": {
+      "concept_coverage": 10.0,
+      "centrality": 5.66,
+      "cross_reference_count": 90,
+      "core_concepts": 1,
+      "total_concepts": 7
+    },
+    "key_contributions": [
+      "Foundation Model"
+    ],
+    "rank": 9
+  },
+  "J Adv Model Earth Syst - 2024 - Swaminathan - A Machine Learning Framework to Evaluate Vegetation Modeling in Earth System": {
+    "overall_score": 4.87,
+    "tier": "relevant",
+    "metrics": {
+      "concept_coverage": 8.57,
+      "centrality": 5.75,
+      "cross_reference_count": 68,
+      "core_concepts": 0,
+      "total_concepts": 6
+    },
+    "key_contributions": [],
+    "rank": 87
+  },
+  "K2：A Foundation Language Model for Geoscience Knowledge Understanding and Utilization": {
+    "overall_score": 5.32,
+    "tier": "relevant",
+    "metrics": {
+      "concept_coverage": 10.0,
+      "centrality": 5.8,
+      "cross_reference_count": 55,
+      "core_concepts": 0,
+      "total_concepts": 7
+    },
+    "key_contributions": [],
+    "rank": 72
+  },
+  "Khanna et al_2023_DiffusionSat": {
+    "overall_score": 6.94,
+    "tier": "important",
+    "metrics": {
+      "concept_coverage": 4.29,
+      "centrality": 6.22,
+      "cross_reference_count": 91,
+      "core_concepts": 3,
+      "total_concepts": 3
+    },
+    "key_contributions": [
+      "Diffusion Model",
+      "Foundation Model",
+      "Remote Sensing"
+    ],
+    "rank": 21
+  },
+  "Learning skillful medium-range global weather forecasting": {
+    "overall_score": 5.43,
+    "tier": "relevant",
+    "metrics": {
+      "concept_coverage": 8.57,
+      "centrality": 5.75,
+      "cross_reference_count": 50,
+      "core_concepts": 4,
+      "total_concepts": 6
+    },
+    "key_contributions": [
+      "ERA5 reanalysis",
+      "Graph Neural Network",
+      "Numerical Weather Prediction",
+      "Weather Forecasting"
+    ],
+    "rank": 66
+  },
+  "Neural general circulation models for weather and climate - 副本": {
+    "overall_score": 5.56,
+    "tier": "relevant",
+    "metrics": {
+      "concept_coverage": 10.0,
+      "centrality": 5.75,
+      "cross_reference_count": 74,
+      "core_concepts": 1,
+      "total_concepts": 7
+    },
+    "key_contributions": [
+      "Weather Forecasting"
+    ],
+    "rank": 63
+  },
+  "On the Opportunities and Challenges of Foundation Models for Geospatial Artificial Intelligence": {
+    "overall_score": 8.46,
+    "tier": "core",
+    "metrics": {
+      "concept_coverage": 10.0,
+      "centrality": 5.72,
+      "cross_reference_count": 71,
+      "core_concepts": 3,
+      "total_concepts": 7
+    },
+    "key_contributions": [
+      "Foundation Model",
+      "GeoAI",
+      "Remote Sensing"
+    ],
+    "rank": 3
+  },
+  "OpenVLA": {
+    "overall_score": 5.4,
+    "tier": "relevant",
+    "metrics": {
+      "concept_coverage": 10.0,
+      "centrality": 5.78,
+      "cross_reference_count": 70,
+      "core_concepts": 1,
+      "total_concepts": 7
+    },
+    "key_contributions": [
+      "vision-language-action model"
+    ],
+    "rank": 68
+  },
+  "PaLM-E：An Embodied Multimodal Language Model": {
+    "overall_score": 5.32,
+    "tier": "relevant",
+    "metrics": {
+      "concept_coverage": 10.0,
+      "centrality": 5.8,
+      "cross_reference_count": 46,
+      "core_concepts": 0,
+      "total_concepts": 7
+    },
+    "key_contributions": [],
+    "rank": 73
+  },
+  "Physics-informed machine learning：case studies for weather and climate modelling": {
+    "overall_score": 5.38,
+    "tier": "relevant",
+    "metrics": {
+      "concept_coverage": 10.0,
+      "centrality": 5.74,
+      "cross_reference_count": 31,
+      "core_concepts": 1,
+      "total_concepts": 7
+    },
+    "key_contributions": [
+      "Physics-Informed Machine Learning"
+    ],
+    "rank": 70
+  },
+  "RT-2：Vision-Language-Action Models Transfer": {
+    "overall_score": 5.39,
+    "tier": "relevant",
+    "metrics": {
+      "concept_coverage": 10.0,
+      "centrality": 5.77,
+      "cross_reference_count": 54,
+      "core_concepts": 1,
+      "total_concepts": 7
+    },
+    "key_contributions": [
+      "vision-language-action model"
+    ],
+    "rank": 69
+  },
+  "Scientific discovery in the age of artificial intelligence": {
+    "overall_score": 4.47,
+    "tier": "relevant",
+    "metrics": {
+      "concept_coverage": 7.14,
+      "centrality": 5.81,
+      "cross_reference_count": 48,
+      "core_concepts": 0,
+      "total_concepts": 5
+    },
+    "key_contributions": [],
+    "rank": 99
+  },
+  "ShapefileGPT  a multi-agent large language model framework for automated shapefile processing": {
+    "overall_score": 7.84,
+    "tier": "important",
+    "metrics": {
+      "concept_coverage": 10.0,
+      "centrality": 5.67,
+      "cross_reference_count": 76,
+      "core_concepts": 2,
+      "total_concepts": 7
+    },
+    "key_contributions": [
+      "Foundation Model",
+      "GeoAI"
+    ],
+    "rank": 8
+  },
+  "Socratic Models：Composing Zero-Shot Multimodal Reasoning with Language": {
+    "overall_score": 7.66,
+    "tier": "important",
+    "metrics": {
+      "concept_coverage": 10.0,
+      "centrality": 5.64,
+      "cross_reference_count": 57,
+      "core_concepts": 1,
+      "total_concepts": 7
+    },
+    "key_contributions": [
+      "Foundation Model"
+    ],
+    "rank": 11
+  },
+  "StormDiT：A generative AI model bridges the 2-6 hour ’gray zone’ in precipitation nowcasting": {
+    "overall_score": 5.38,
+    "tier": "relevant",
+    "metrics": {
+      "concept_coverage": 10.0,
+      "centrality": 5.74,
+      "cross_reference_count": 28,
+      "core_concepts": 1,
+      "total_concepts": 7
+    },
+    "key_contributions": [
+      "World Model"
+    ],
+    "rank": 71
+  },
+  "从大模型到世界模型 ：智能革命": {
+    "overall_score": 7.87,
+    "tier": "important",
+    "metrics": {
+      "concept_coverage": 10.0,
+      "centrality": 5.64,
+      "cross_reference_count": 78,
+      "core_concepts": 3,
+      "total_concepts": 7
+    },
+    "key_contributions": [
+      "Causal Reasoning",
+      "Foundation Model",
+      "World Model"
+    ],
+    "rank": 7
+  },
+  "地外星表探测器着陆-巡视自主导航技术研究进展": {
+    "overall_score": 5.3,
+    "tier": "relevant",
+    "metrics": {
+      "concept_coverage": 10.0,
+      "centrality": 5.75,
+      "cross_reference_count": 51,
+      "core_concepts": 0,
+      "total_concepts": 7
+    },
+    "key_contributions": [],
+    "rank": 76
+  },
+  "数字孪生流域++未来流域治理管理的新基建新范式": {
+    "overall_score": 5.3,
+    "tier": "relevant",
+    "metrics": {
+      "concept_coverage": 10.0,
+      "centrality": 5.75,
+      "cross_reference_count": 44,
+      "core_concepts": 0,
+      "total_concepts": 7
+    },
+    "key_contributions": [],
+    "rank": 77
+  },
+  "生成式人工智能扩散模型在气象领域中的研究与应用进展": {
+    "overall_score": 5.55,
+    "tier": "relevant",
+    "metrics": {
+      "concept_coverage": 10.0,
+      "centrality": 5.73,
+      "cross_reference_count": 53,
+      "core_concepts": 2,
+      "total_concepts": 7
+    },
+    "key_contributions": [
+      "Data Assimilation",
+      "Diffusion Model"
+    ],
+    "rank": 64
+  },
+  "第4章__多模态地球科学大模型文献__4.3.1_多模态大模型基础原理__BLIP系列与Q-Former__BLIP2": {
+    "overall_score": 7.05,
+    "tier": "important",
+    "metrics": {
+      "concept_coverage": 2.86,
+      "centrality": 6.68,
+      "cross_reference_count": 103,
+      "core_concepts": 2,
+      "total_concepts": 2
+    },
+    "key_contributions": [
+      "Foundation Model",
+      "Transformer"
+    ],
+    "rank": 13
+  },
+  "第4章__多模态地球科学大模型文献__4.3.1_多模态大模型基础原理__BLIP系列与Q-Former__InstructBLIP": {
+    "overall_score": 5.55,
+    "tier": "relevant",
+    "metrics": {
+      "concept_coverage": 2.86,
+      "centrality": 7.03,
+      "cross_reference_count": 42,
+      "core_concepts": 2,
+      "total_concepts": 2
+    },
+    "key_contributions": [
+      "Transformer",
+      "multimodal"
+    ],
+    "rank": 65
+  },
+  "第4章__多模态地球科学大模型文献__4.3.1_多模态大模型基础原理__BLIP系列与Q-Former__MiniGPT4": {
+    "overall_score": 5.66,
+    "tier": "relevant",
+    "metrics": {
+      "concept_coverage": 1.43,
+      "centrality": 7.07,
+      "cross_reference_count": 89,
+      "core_concepts": 1,
+      "total_concepts": 1
+    },
+    "key_contributions": [
+      "Foundation Model"
+    ],
+    "rank": 55
+  },
+  "第4章__多模态地球科学大模型文献__4.3.1_多模态大模型基础原理__LLaVA系列__LLaVA": {
+    "overall_score": 6.77,
+    "tier": "important",
+    "metrics": {
+      "concept_coverage": 2.86,
+      "centrality": 6.84,
+      "cross_reference_count": 90,
+      "core_concepts": 2,
+      "total_concepts": 2
+    },
+    "key_contributions": [
+      "Foundation Model",
+      "multimodal"
+    ],
+    "rank": 25
+  },
+  "第4章__多模态地球科学大模型文献__4.3.1_多模态大模型基础原理__LLaVA系列__LLaVA_Read": {
+    "overall_score": 6.75,
+    "tier": "important",
+    "metrics": {
+      "concept_coverage": 2.86,
+      "centrality": 6.81,
+      "cross_reference_count": 93,
+      "core_concepts": 2,
+      "total_concepts": 2
+    },
+    "key_contributions": [
+      "Foundation Model",
+      "multimodal"
+    ],
+    "rank": 26
+  },
+  "第4章__多模态地球科学大模型文献__4.3.1_多模态大模型基础原理__MLLM综述与架构__A_Survey_on_Multimodal_Large_Language_Models": {
+    "overall_score": 6.75,
+    "tier": "important",
+    "metrics": {
+      "concept_coverage": 2.86,
+      "centrality": 6.81,
+      "cross_reference_count": 93,
+      "core_concepts": 2,
+      "total_concepts": 2
+    },
+    "key_contributions": [
+      "Foundation Model",
+      "multimodal"
+    ],
+    "rank": 27
+  },
+  "第4章__多模态地球科学大模型文献__4.3.1_多模态大模型基础原理__MLLM综述与架构__MLLM-part2-Yuan": {
+    "overall_score": 7.02,
+    "tier": "important",
+    "metrics": {
+      "concept_coverage": 2.86,
+      "centrality": 7.48,
+      "cross_reference_count": 105,
+      "core_concepts": 2,
+      "total_concepts": 2
+    },
+    "key_contributions": [
+      "Foundation Model",
+      "multimodal"
+    ],
+    "rank": 16
+  },
+  "第4章__多模态地球科学大模型文献__4.3.1_多模态大模型基础原理__MLLM综述与架构__MLLM-part3-Hao -v2": {
+    "overall_score": 7.02,
+    "tier": "important",
+    "metrics": {
+      "concept_coverage": 2.86,
+      "centrality": 7.48,
+      "cross_reference_count": 105,
+      "core_concepts": 2,
+      "total_concepts": 2
+    },
+    "key_contributions": [
+      "Foundation Model",
+      "multimodal"
+    ],
+    "rank": 17
+  },
+  "第4章__多模态地球科学大模型文献__4.3.1_多模态大模型基础原理__MLLM综述与架构__MLLM-part4-Haotian": {
+    "overall_score": 7.02,
+    "tier": "important",
+    "metrics": {
+      "concept_coverage": 2.86,
+      "centrality": 7.48,
+      "cross_reference_count": 105,
+      "core_concepts": 2,
+      "total_concepts": 2
+    },
+    "key_contributions": [
+      "Foundation Model",
+      "multimodal"
+    ],
+    "rank": 18
+  },
+  "第4章__多模态地球科学大模型文献__4.3.1_多模态大模型基础原理__MLLM综述与架构__Revolution_Multimodal_LLMs": {
+    "overall_score": 6.88,
+    "tier": "important",
+    "metrics": {
+      "concept_coverage": 2.86,
+      "centrality": 7.13,
+      "cross_reference_count": 71,
+      "core_concepts": 2,
+      "total_concepts": 2
+    },
+    "key_contributions": [
+      "Foundation Model",
+      "multimodal"
+    ],
+    "rank": 22
+  },
+  "第4章__多模态地球科学大模型文献__4.3.1_多模态大模型基础原理__对比学习__CLIP": {
+    "overall_score": 2.45,
+    "tier": "peripheral",
+    "metrics": {
+      "concept_coverage": 0.0,
+      "centrality": 6.12,
+      "cross_reference_count": 12,
+      "core_concepts": 0,
+      "total_concepts": 0
+    },
+    "key_contributions": [],
+    "rank": 126
+  },
+  "第4章__多模态地球科学大模型文献__4.3.1_多模态大模型基础原理__对比学习__Contrastive_Localized": {
+    "overall_score": 6.82,
+    "tier": "important",
+    "metrics": {
+      "concept_coverage": 2.86,
+      "centrality": 6.98,
+      "cross_reference_count": 80,
+      "core_concepts": 2,
+      "total_concepts": 2
+    },
+    "key_contributions": [
+      "Foundation Model",
+      "multimodal"
+    ],
+    "rank": 23
+  },
+  "第4章__多模态地球科学大模型文献__4.3.1_多模态大模型基础原理__对比学习__EVA_CLIP": {
+    "overall_score": 3.79,
+    "tier": "peripheral",
+    "metrics": {
+      "concept_coverage": 1.43,
+      "centrality": 6.46,
+      "cross_reference_count": 47,
+      "core_concepts": 1,
+      "total_concepts": 1
+    },
+    "key_contributions": [
+      "multimodal"
+    ],
+    "rank": 106
+  },
+  "第4章__多模态地球科学大模型文献__4.3.1_多模态大模型基础原理__掩码图像建模__MAE": {
+    "overall_score": 2.31,
+    "tier": "peripheral",
+    "metrics": {
+      "concept_coverage": 0.0,
+      "centrality": 5.77,
+      "cross_reference_count": 31,
+      "core_concepts": 0,
+      "total_concepts": 0
+    },
+    "key_contributions": [],
+    "rank": 131
+  },
+  "第4章__多模态地球科学大模型文献__4.3.1_多模态大模型基础原理__掩码图像建模__MIMRS_Survey": {
+    "overall_score": 3.41,
+    "tier": "peripheral",
+    "metrics": {
+      "concept_coverage": 1.43,
+      "centrality": 5.95,
+      "cross_reference_count": 53,
+      "core_concepts": 1,
+      "total_concepts": 1
+    },
+    "key_contributions": [
+      "Remote Sensing"
+    ],
+    "rank": 114
+  },
+  "第4章__多模态地球科学大模型文献__4.3.1_多模态大模型基础原理__掩码图像建模__MIM_Survey_IJCV": {
+    "overall_score": 2.3,
+    "tier": "peripheral",
+    "metrics": {
+      "concept_coverage": 0.0,
+      "centrality": 5.75,
+      "cross_reference_count": 51,
+      "core_concepts": 0,
+      "total_concepts": 0
+    },
+    "key_contributions": [],
+    "rank": 136
+  },
+  "第4章__多模态地球科学大模型文献__4.3.1_多模态大模型基础原理__掩码图像建模__SS_MAE": {
+    "overall_score": 4.3,
+    "tier": "relevant",
+    "metrics": {
+      "concept_coverage": 1.43,
+      "centrality": 6.89,
+      "cross_reference_count": 73,
+      "core_concepts": 1,
+      "total_concepts": 1
+    },
+    "key_contributions": [
+      "Transformer"
+    ],
+    "rank": 100
+  },
+  "第4章__多模态地球科学大模型文献__4.3.1_多模态大模型基础原理__自监督学习__Contrastive_Masked_Feature": {
+    "overall_score": 0.0,
+    "tier": "peripheral",
+    "metrics": {
+      "concept_coverage": 0.0,
+      "centrality": 0,
+      "cross_reference_count": 0,
+      "core_concepts": 0,
+      "total_concepts": 0
+    },
+    "key_contributions": [],
+    "rank": 150
+  },
+  "第4章__多模态地球科学大模型文献__4.3.1_多模态大模型基础原理__自监督学习__MoCo": {
+    "overall_score": 2.31,
+    "tier": "peripheral",
+    "metrics": {
+      "concept_coverage": 0.0,
+      "centrality": 5.78,
+      "cross_reference_count": 24,
+      "core_concepts": 0,
+      "total_concepts": 0
+    },
+    "key_contributions": [],
+    "rank": 132
+  },
+  "第4章__多模态地球科学大模型文献__4.3.1_多模态大模型基础原理__自监督学习__SimCLR": {
+    "overall_score": 2.31,
+    "tier": "peripheral",
+    "metrics": {
+      "concept_coverage": 0.0,
+      "centrality": 5.78,
+      "cross_reference_count": 24,
+      "core_concepts": 0,
+      "total_concepts": 0
+    },
+    "key_contributions": [],
+    "rank": 133
+  },
+  "第4章__多模态地球科学大模型文献__4.3.2_多模态表示与融合方法__AlphaEarth地学模型__AlphaEarth_Foundations": {
+    "overall_score": 3.52,
+    "tier": "peripheral",
+    "metrics": {
+      "concept_coverage": 0.0,
+      "centrality": 8.8,
+      "cross_reference_count": 32,
+      "core_concepts": 0,
+      "total_concepts": 0
+    },
+    "key_contributions": [],
+    "rank": 113
+  },
+  "第4章__多模态地球科学大模型文献__4.3.2_多模态表示与融合方法__AlphaEarth地学模型__AlphaEarth_Scalable": {
+    "overall_score": 3.55,
+    "tier": "peripheral",
+    "metrics": {
+      "concept_coverage": 2.86,
+      "centrality": 5.87,
+      "cross_reference_count": 53,
+      "core_concepts": 2,
+      "total_concepts": 2
+    },
+    "key_contributions": [
+      "GIS",
+      "Geospatial"
+    ],
+    "rank": 111
+  },
+  "第4章__多模态地球科学大模型文献__4.3.2_多模态表示与融合方法__气象预报基础模型__ClimaX": {
+    "overall_score": 6.7,
+    "tier": "important",
+    "metrics": {
+      "concept_coverage": 4.29,
+      "centrality": 6.9,
+      "cross_reference_count": 97,
+      "core_concepts": 2,
+      "total_concepts": 3
+    },
+    "key_contributions": [
+      "Foundation Model",
+      "Weather Forecasting"
+    ],
+    "rank": 30
+  },
+  "第4章__多模态地球科学大模型文献__4.3.2_多模态表示与融合方法__遥感基础模型__Foundation_Models_Survey": {
+    "overall_score": 7.04,
+    "tier": "important",
+    "metrics": {
+      "concept_coverage": 4.29,
+      "centrality": 6.36,
+      "cross_reference_count": 76,
+      "core_concepts": 3,
+      "total_concepts": 3
+    },
+    "key_contributions": [
+      "Earth Observation",
+      "Foundation Model",
+      "Remote Sensing"
+    ],
+    "rank": 14
+  },
+  "第4章__多模态地球科学大模型文献__4.3.2_多模态表示与融合方法__遥感基础模型__RINGMO-AGENT A UNIFIED REMOTE SENSING FOUNDATION": {
+    "overall_score": 6.57,
+    "tier": "important",
+    "metrics": {
+      "concept_coverage": 2.86,
+      "centrality": 6.78,
+      "cross_reference_count": 70,
+      "core_concepts": 2,
+      "total_concepts": 2
+    },
+    "key_contributions": [
+      "Foundation Model",
+      "Remote Sensing"
+    ],
+    "rank": 33
+  },
+  "第4章__多模态地球科学大模型文献__4.3.2_多模态表示与融合方法__遥感基础模型__RS_Foundation_Models_Survey": {
+    "overall_score": 8.22,
+    "tier": "core",
+    "metrics": {
+      "concept_coverage": 5.71,
+      "centrality": 6.31,
+      "cross_reference_count": 81,
+      "core_concepts": 4,
+      "total_concepts": 4
+    },
+    "key_contributions": [
+      "Foundation Model",
+      "Geospatial",
+      "Remote Sensing",
+      "multimodal"
+    ],
+    "rank": 4
+  },
+  "第4章__多模态地球科学大模型文献__4.3.2_多模态表示与融合方法__遥感基础模型__TerraFM": {
+    "overall_score": 6.19,
+    "tier": "important",
+    "metrics": {
+      "concept_coverage": 2.86,
+      "centrality": 6.8,
+      "cross_reference_count": 56,
+      "core_concepts": 2,
+      "total_concepts": 2
+    },
+    "key_contributions": [
+      "Earth Observation",
+      "Foundation Model"
+    ],
+    "rank": 36
+  },
+  "第4章__多模态地球科学大模型文献__4.3.2_多模态表示与融合方法__骨干网络对比__Mamba_MOC": {
+    "overall_score": 5.1,
+    "tier": "relevant",
+    "metrics": {
+      "concept_coverage": 2.86,
+      "centrality": 6.32,
+      "cross_reference_count": 76,
+      "core_concepts": 2,
+      "total_concepts": 2
+    },
+    "key_contributions": [
+      "Remote Sensing",
+      "Transformer"
+    ],
+    "rank": 81
+  },
+  "第4章__多模态地球科学大模型文献__4.3.2_多模态表示与融合方法__骨干网络对比__SatMamba": {
+    "overall_score": 8.52,
+    "tier": "core",
+    "metrics": {
+      "concept_coverage": 5.71,
+      "centrality": 6.2,
+      "cross_reference_count": 96,
+      "core_concepts": 4,
+      "total_concepts": 4
+    },
+    "key_contributions": [
+      "Earth Observation",
+      "Foundation Model",
+      "Remote Sensing",
+      "Transformer"
+    ],
+    "rank": 2
+  },
+  "第4章__多模态地球科学大模型文献__4.3.2_多模态表示与融合方法__骨干网络对比__ViT_vs_CNN": {
+    "overall_score": 4.51,
+    "tier": "relevant",
+    "metrics": {
+      "concept_coverage": 1.43,
+      "centrality": 7.43,
+      "cross_reference_count": 51,
+      "core_concepts": 1,
+      "total_concepts": 1
+    },
+    "key_contributions": [
+      "Transformer"
+    ],
+    "rank": 95
+  },
+  "第4章__多模态地球科学大模型文献__4.3.2_多模态表示与融合方法__骨干网络对比__Vision_Mamba": {
+    "overall_score": 7.18,
+    "tier": "important",
+    "metrics": {
+      "concept_coverage": 2.86,
+      "centrality": 7.02,
+      "cross_reference_count": 76,
+      "core_concepts": 2,
+      "total_concepts": 2
+    },
+    "key_contributions": [
+      "Foundation Model",
+      "Transformer"
+    ],
+    "rank": 12
+  },
+  "第4章__多模态地球科学大模型文献__4.3.3_多模态地球科学大模型与智能体__AI_Agent基础__ReAct": {
+    "overall_score": 5.67,
+    "tier": "relevant",
+    "metrics": {
+      "concept_coverage": 1.43,
+      "centrality": 7.11,
+      "cross_reference_count": 88,
+      "core_concepts": 1,
+      "total_concepts": 1
+    },
+    "key_contributions": [
+      "Foundation Model"
+    ],
+    "rank": 53
+  },
+  "第4章__多模态地球科学大模型文献__4.3.3_多模态地球科学大模型与智能体__AI_Agent基础__ReflAct": {
+    "overall_score": 5.68,
+    "tier": "relevant",
+    "metrics": {
+      "concept_coverage": 1.43,
+      "centrality": 7.12,
+      "cross_reference_count": 86,
+      "core_concepts": 1,
+      "total_concepts": 1
+    },
+    "key_contributions": [
+      "Foundation Model"
+    ],
+    "rank": 52
+  },
+  "第4章__多模态地球科学大模型文献__4.3.3_多模态地球科学大模型与智能体__MLLM评测基准__MMBench": {
+    "overall_score": 6.75,
+    "tier": "important",
+    "metrics": {
+      "concept_coverage": 2.86,
+      "centrality": 6.81,
+      "cross_reference_count": 93,
+      "core_concepts": 2,
+      "total_concepts": 2
+    },
+    "key_contributions": [
+      "Foundation Model",
+      "multimodal"
+    ],
+    "rank": 28
+  },
+  "第4章__多模态地球科学大模型文献__4.3.3_多模态地球科学大模型与智能体__MLLM评测基准__MME_Benchmark": {
+    "overall_score": 6.98,
+    "tier": "important",
+    "metrics": {
+      "concept_coverage": 2.86,
+      "centrality": 7.37,
+      "cross_reference_count": 61,
+      "core_concepts": 2,
+      "total_concepts": 2
+    },
+    "key_contributions": [
+      "Foundation Model",
+      "multimodal"
+    ],
+    "rank": 19
+  },
+  "第4章__多模态地球科学大模型文献__4.3.3_多模态地球科学大模型与智能体__MLLM评测基准__MME_SCI": {
+    "overall_score": 6.82,
+    "tier": "important",
+    "metrics": {
+      "concept_coverage": 2.86,
+      "centrality": 6.98,
+      "cross_reference_count": 80,
+      "core_concepts": 2,
+      "total_concepts": 2
+    },
+    "key_contributions": [
+      "Foundation Model",
+      "multimodal"
+    ],
+    "rank": 24
+  },
+  "第4章__多模态地球科学大模型文献__4.3.3_多模态地球科学大模型与智能体__MLLM评测基准__MMEvalPro": {
+    "overall_score": 6.75,
+    "tier": "important",
+    "metrics": {
+      "concept_coverage": 2.86,
+      "centrality": 6.81,
+      "cross_reference_count": 93,
+      "core_concepts": 2,
+      "total_concepts": 2
+    },
+    "key_contributions": [
+      "Foundation Model",
+      "multimodal"
+    ],
+    "rank": 29
+  },
+  "第4章__多模态地球科学大模型文献__4.3.3_多模态地球科学大模型与智能体__地理AI智能体__Accelerating earth science discovery via multi-agent LLM systems": {
+    "overall_score": 5.96,
+    "tier": "relevant",
+    "metrics": {
+      "concept_coverage": 1.43,
+      "centrality": 7.84,
+      "cross_reference_count": 91,
+      "core_concepts": 1,
+      "total_concepts": 1
+    },
+    "key_contributions": [
+      "Foundation Model"
+    ],
+    "rank": 41
+  },
+  "第4章__多模态地球科学大模型文献__4.3.3_多模态地球科学大模型与智能体__地理AI智能体__An Autonomous GIS Agent Framework for Geospatial Data Retrieval ": {
+    "overall_score": 6.48,
+    "tier": "important",
+    "metrics": {
+      "concept_coverage": 4.29,
+      "centrality": 6.12,
+      "cross_reference_count": 91,
+      "core_concepts": 3,
+      "total_concepts": 3
+    },
+    "key_contributions": [
+      "Foundation Model",
+      "GIS",
+      "Geospatial"
+    ],
+    "rank": 35
+  },
+  "第4章__多模态地球科学大模型文献__4.3.3_多模态地球科学大模型与智能体__地理AI智能体__Mapping the landscape and roadmap of geospatial artificial intelligence ": {
+    "overall_score": 3.55,
+    "tier": "peripheral",
+    "metrics": {
+      "concept_coverage": 1.43,
+      "centrality": 7.27,
+      "cross_reference_count": 67,
+      "core_concepts": 1,
+      "total_concepts": 1
+    },
+    "key_contributions": [
+      "Geospatial"
+    ],
+    "rank": 112
+  },
+  "第4章__多模态地球科学大模型文献__补充经典文献__Attention_Is_All_You_Need": {
+    "overall_score": 4.92,
+    "tier": "relevant",
+    "metrics": {
+      "concept_coverage": 1.43,
+      "centrality": 8.43,
+      "cross_reference_count": 31,
+      "core_concepts": 1,
+      "total_concepts": 1
+    },
+    "key_contributions": [
+      "Transformer"
+    ],
+    "rank": 85
+  },
+  "第4章__多模态地球科学大模型文献__补充经典文献__Vision_Transformer_ViT": {
+    "overall_score": 4.5,
+    "tier": "relevant",
+    "metrics": {
+      "concept_coverage": 1.43,
+      "centrality": 7.38,
+      "cross_reference_count": 51,
+      "core_concepts": 1,
+      "total_concepts": 1
+    },
+    "key_contributions": [
+      "Transformer"
+    ],
+    "rank": 96
+  },
+  "第4章__大语言模型__4.2.1 大语言模型_结构与演变 (Structure and Evolution__Attention Is All You Need": {
+    "overall_score": 4.92,
+    "tier": "relevant",
+    "metrics": {
+      "concept_coverage": 1.43,
+      "centrality": 8.43,
+      "cross_reference_count": 31,
+      "core_concepts": 1,
+      "total_concepts": 1
+    },
+    "key_contributions": [
+      "Transformer"
+    ],
+    "rank": 86
+  },
+  "第4章__大语言模型__4.2.1 大语言模型_结构与演变 (Structure and Evolution__BERT_ Pre-training of Deep Bidirectional Transformers for Language Understanding": {
+    "overall_score": 4.77,
+    "tier": "relevant",
+    "metrics": {
+      "concept_coverage": 1.43,
+      "centrality": 8.06,
+      "cross_reference_count": 36,
+      "core_concepts": 1,
+      "total_concepts": 1
+    },
+    "key_contributions": [
+      "Transformer"
+    ],
+    "rank": 89
+  },
+  "第4章__大语言模型__4.2.1 大语言模型_结构与演变 (Structure and Evolution__Bengio, Neural Machine Translation by Jointly Learning to Align and Translate": {
+    "overall_score": 2.36,
+    "tier": "peripheral",
+    "metrics": {
+      "concept_coverage": 0.0,
+      "centrality": 5.9,
+      "cross_reference_count": 10,
+      "core_concepts": 0,
+      "total_concepts": 0
+    },
+    "key_contributions": [],
+    "rank": 127
+  },
+  "第4章__大语言模型__4.2.1 大语言模型_结构与演变 (Structure and Evolution__Deep contextualized word representations": {
+    "overall_score": 1.3,
+    "tier": "peripheral",
+    "metrics": {
+      "concept_coverage": 0.0,
+      "centrality": 3.25,
+      "cross_reference_count": 5,
+      "core_concepts": 0,
+      "total_concepts": 0
+    },
+    "key_contributions": [],
+    "rank": 145
+  },
+  "第4章__大语言模型__4.2.1 大语言模型_结构与演变 (Structure and Evolution__Efficient Estimation of Word Representations in Vector Space": {
+    "overall_score": 1.3,
+    "tier": "peripheral",
+    "metrics": {
+      "concept_coverage": 0.0,
+      "centrality": 3.25,
+      "cross_reference_count": 5,
+      "core_concepts": 0,
+      "total_concepts": 0
+    },
+    "key_contributions": [],
+    "rank": 146
+  },
+  "第4章__大语言模型__4.2.1 大语言模型_结构与演变 (Structure and Evolution__Emergent Abilities of Large Language Models": {
+    "overall_score": 5.78,
+    "tier": "relevant",
+    "metrics": {
+      "concept_coverage": 1.43,
+      "centrality": 7.38,
+      "cross_reference_count": 75,
+      "core_concepts": 1,
+      "total_concepts": 1
+    },
+    "key_contributions": [
+      "Foundation Model"
+    ],
+    "rank": 45
+  },
+  "第4章__大语言模型__4.2.1 大语言模型_结构与演变 (Structure and Evolution__Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer": {
+    "overall_score": 4.3,
+    "tier": "relevant",
+    "metrics": {
+      "concept_coverage": 1.43,
+      "centrality": 6.89,
+      "cross_reference_count": 74,
+      "core_concepts": 1,
+      "total_concepts": 1
+    },
+    "key_contributions": [
+      "Transformer"
+    ],
+    "rank": 101
+  },
+  "第4章__大语言模型__4.2.1 大语言模型_结构与演变 (Structure and Evolution__Improving Language Understanding by Generative Pre-Training": {
+    "overall_score": 2.47,
+    "tier": "peripheral",
+    "metrics": {
+      "concept_coverage": 0.0,
+      "centrality": 6.18,
+      "cross_reference_count": 17,
+      "core_concepts": 0,
+      "total_concepts": 0
+    },
+    "key_contributions": [],
+    "rank": 124
+  },
+  "第4章__大语言模型__4.2.1 大语言模型_结构与演变 (Structure and Evolution__Scaling Laws for Neural Language Models": {
+    "overall_score": 4.58,
+    "tier": "relevant",
+    "metrics": {
+      "concept_coverage": 1.43,
+      "centrality": 7.58,
+      "cross_reference_count": 47,
+      "core_concepts": 1,
+      "total_concepts": 1
+    },
+    "key_contributions": [
+      "Transformer"
+    ],
+    "rank": 93
+  },
+  "第4章__大语言模型__4.2.1 大语言模型_结构与演变 (Structure and Evolution__Speech and Language Processing (online textbook)": {
+    "overall_score": 5.31,
+    "tier": "relevant",
+    "metrics": {
+      "concept_coverage": 1.43,
+      "centrality": 9.41,
+      "cross_reference_count": 46,
+      "core_concepts": 1,
+      "total_concepts": 1
+    },
+    "key_contributions": [
+      "Transformer"
+    ],
+    "rank": 74
+  },
+  "第4章__大语言模型__4.2.1 大语言模型_结构与演变 (Structure and Evolution__Stanford CS224n Lecture 8_ Self-Attention and Transformers": {
+    "overall_score": 4.0,
+    "tier": "relevant",
+    "metrics": {
+      "concept_coverage": 0.0,
+      "centrality": 10,
+      "cross_reference_count": 23,
+      "core_concepts": 0,
+      "total_concepts": 0
+    },
+    "key_contributions": [],
+    "rank": 104
+  },
+  "第4章__大语言模型__4.2.1 大语言模型_结构与演变 (Structure and Evolution__Stanford CS224n Note 10_ Self-Attention & Transformers": {
+    "overall_score": 4.62,
+    "tier": "relevant",
+    "metrics": {
+      "concept_coverage": 1.43,
+      "centrality": 7.68,
+      "cross_reference_count": 87,
+      "core_concepts": 1,
+      "total_concepts": 1
+    },
+    "key_contributions": [
+      "Transformer"
+    ],
+    "rank": 92
+  },
+  "第4章__大语言模型__4.2.1 大语言模型_结构与演变 (Structure and Evolution__Training Compute-Optimal Large Language Models": {
+    "overall_score": 2.86,
+    "tier": "peripheral",
+    "metrics": {
+      "concept_coverage": 0.0,
+      "centrality": 7.15,
+      "cross_reference_count": 71,
+      "core_concepts": 0,
+      "total_concepts": 0
+    },
+    "key_contributions": [],
+    "rank": 120
+  },
+  "第4章__大语言模型__4.2.1 大语言模型_结构与演变 (Structure and Evolution__Transformers chapter": {
+    "overall_score": 5.16,
+    "tier": "relevant",
+    "metrics": {
+      "concept_coverage": 1.43,
+      "centrality": 9.05,
+      "cross_reference_count": 51,
+      "core_concepts": 1,
+      "total_concepts": 1
+    },
+    "key_contributions": [
+      "Transformer"
+    ],
+    "rank": 79
+  },
+  "第4章__大语言模型__4.2.2 预训练与微调方法 (Pre-training and Fine-tuning Methods)__DeepSeek-V3 Technical Report": {
+    "overall_score": 2.3,
+    "tier": "peripheral",
+    "metrics": {
+      "concept_coverage": 0.0,
+      "centrality": 5.75,
+      "cross_reference_count": 51,
+      "core_concepts": 0,
+      "total_concepts": 0
+    },
+    "key_contributions": [],
+    "rank": 137
+  },
+  "第4章__大语言模型__4.2.2 预训练与微调方法 (Pre-training and Fine-tuning Methods)__Devlin et al., BERT": {
+    "overall_score": 4.77,
+    "tier": "relevant",
+    "metrics": {
+      "concept_coverage": 1.43,
+      "centrality": 8.06,
+      "cross_reference_count": 36,
+      "core_concepts": 1,
+      "total_concepts": 1
+    },
+    "key_contributions": [
+      "Transformer"
+    ],
+    "rank": 90
+  },
+  "第4章__大语言模型__4.2.2 预训练与微调方法 (Pre-training and Fine-tuning Methods)__Direct Preference Optimization_ Your Language Model is Secretly a Reward Model": {
+    "overall_score": 2.3,
+    "tier": "peripheral",
+    "metrics": {
+      "concept_coverage": 0.0,
+      "centrality": 5.76,
+      "cross_reference_count": 68,
+      "core_concepts": 0,
+      "total_concepts": 0
+    },
+    "key_contributions": [],
+    "rank": 138
+  },
+  "第4章__大语言模型__4.2.2 预训练与微调方法 (Pre-training and Fine-tuning Methods)__GeoGalactica_ A Scientific Large Language Model in Geoscience": {
+    "overall_score": 7.04,
+    "tier": "important",
+    "metrics": {
+      "concept_coverage": 2.86,
+      "centrality": 6.66,
+      "cross_reference_count": 108,
+      "core_concepts": 2,
+      "total_concepts": 2
+    },
+    "key_contributions": [
+      "Foundation Model",
+      "Transformer"
+    ],
+    "rank": 15
+  },
+  "第4章__大语言模型__4.2.2 预训练与微调方法 (Pre-training and Fine-tuning Methods)__Howard & Ruder, ULMFiT": {
+    "overall_score": 0.7,
+    "tier": "peripheral",
+    "metrics": {
+      "concept_coverage": 0.0,
+      "centrality": 1.75,
+      "cross_reference_count": 2,
+      "core_concepts": 0,
+      "total_concepts": 0
+    },
+    "key_contributions": [],
+    "rank": 148
+  },
+  "第4章__大语言模型__4.2.2 预训练与微调方法 (Pre-training and Fine-tuning Methods)__Hu et al., LoRA": {
+    "overall_score": 4.5,
+    "tier": "relevant",
+    "metrics": {
+      "concept_coverage": 1.43,
+      "centrality": 7.38,
+      "cross_reference_count": 51,
+      "core_concepts": 1,
+      "total_concepts": 1
+    },
+    "key_contributions": [
+      "Transformer"
+    ],
+    "rank": 97
+  },
+  "第4章__大语言模型__4.2.2 预训练与微调方法 (Pre-training and Fine-tuning Methods)__Improving Language Understanding by Generative Pre-Training": {
+    "overall_score": 2.47,
+    "tier": "peripheral",
+    "metrics": {
+      "concept_coverage": 0.0,
+      "centrality": 6.18,
+      "cross_reference_count": 17,
+      "core_concepts": 0,
+      "total_concepts": 0
+    },
+    "key_contributions": [],
+    "rank": 125
+  },
+  "第4章__大语言模型__4.2.2 预训练与微调方法 (Pre-training and Fine-tuning Methods)__Lewis et al., BART": {
+    "overall_score": 1.55,
+    "tier": "peripheral",
+    "metrics": {
+      "concept_coverage": 0.0,
+      "centrality": 3.88,
+      "cross_reference_count": 6,
+      "core_concepts": 0,
+      "total_concepts": 0
+    },
+    "key_contributions": [],
+    "rank": 144
+  },
+  "第4章__大语言模型__4.2.2 预训练与微调方法 (Pre-training and Fine-tuning Methods)__LoRA_ Low-Rank Adaptation of Large Language Models": {
+    "overall_score": 4.5,
+    "tier": "relevant",
+    "metrics": {
+      "concept_coverage": 1.43,
+      "centrality": 7.38,
+      "cross_reference_count": 51,
+      "core_concepts": 1,
+      "total_concepts": 1
+    },
+    "key_contributions": [
+      "Transformer"
+    ],
+    "rank": 98
+  },
+  "第4章__大语言模型__4.2.2 预训练与微调方法 (Pre-training and Fine-tuning Methods)__Parameter-Efficient Fine-Tuning for Large Models_ A Comprehensive Survey": {
+    "overall_score": 2.3,
+    "tier": "peripheral",
+    "metrics": {
+      "concept_coverage": 0.0,
+      "centrality": 5.75,
+      "cross_reference_count": 68,
+      "core_concepts": 0,
+      "total_concepts": 0
+    },
+    "key_contributions": [],
+    "rank": 139
+  },
+  "第4章__大语言模型__4.2.2 预训练与微调方法 (Pre-training and Fine-tuning Methods)__Parameter-Efficient Transfer Learning for NLP": {
+    "overall_score": 4.99,
+    "tier": "relevant",
+    "metrics": {
+      "concept_coverage": 1.43,
+      "centrality": 8.62,
+      "cross_reference_count": 29,
+      "core_concepts": 1,
+      "total_concepts": 1
+    },
+    "key_contributions": [
+      "Transformer"
+    ],
+    "rank": 83
+  },
+  "第4章__大语言模型__4.2.2 预训练与微调方法 (Pre-training and Fine-tuning Methods)__Raffel et al., T5": {
+    "overall_score": 4.3,
+    "tier": "relevant",
+    "metrics": {
+      "concept_coverage": 1.43,
+      "centrality": 6.89,
+      "cross_reference_count": 74,
+      "core_concepts": 1,
+      "total_concepts": 1
+    },
+    "key_contributions": [
+      "Transformer"
+    ],
+    "rank": 102
+  },
+  "第4章__大语言模型__4.2.2 预训练与微调方法 (Pre-training and Fine-tuning Methods)__RoBERTa": {
+    "overall_score": 2.33,
+    "tier": "peripheral",
+    "metrics": {
+      "concept_coverage": 0.0,
+      "centrality": 5.83,
+      "cross_reference_count": 19,
+      "core_concepts": 0,
+      "total_concepts": 0
+    },
+    "key_contributions": [],
+    "rank": 128
+  },
+  "第4章__大语言模型__4.2.2 预训练与微调方法 (Pre-training and Fine-tuning Methods)__The Power of Scale for Parameter-Efficient Prompt Tuning": {
+    "overall_score": 2.31,
+    "tier": "peripheral",
+    "metrics": {
+      "concept_coverage": 0.0,
+      "centrality": 5.77,
+      "cross_reference_count": 31,
+      "core_concepts": 0,
+      "total_concepts": 0
+    },
+    "key_contributions": [],
+    "rank": 134
+  },
+  "第4章__大语言模型__4.2.2 预训练与微调方法 (Pre-training and Fine-tuning Methods)__Training language models to follow instructions with human feedback": {
+    "overall_score": 5.72,
+    "tier": "relevant",
+    "metrics": {
+      "concept_coverage": 1.43,
+      "centrality": 7.22,
+      "cross_reference_count": 81,
+      "core_concepts": 1,
+      "total_concepts": 1
+    },
+    "key_contributions": [
+      "Foundation Model"
+    ],
+    "rank": 49
+  },
+  "第4章__大语言模型__4.2.2 预训练与微调方法 (Pre-training and Fine-tuning Methods)__Transformers and Pretrained Language Models": {
+    "overall_score": 5.31,
+    "tier": "relevant",
+    "metrics": {
+      "concept_coverage": 1.43,
+      "centrality": 9.41,
+      "cross_reference_count": 46,
+      "core_concepts": 1,
+      "total_concepts": 1
+    },
+    "key_contributions": [
+      "Transformer"
+    ],
+    "rank": 75
+  },
+  "第4章__大语言模型__4.2.3 提示学习与指令微调 (Prompt Learning and Instruction Tuning)__Chain-of-Thought Prompting Elicits Reasoning in Large Language Models": {
+    "overall_score": 5.84,
+    "tier": "relevant",
+    "metrics": {
+      "concept_coverage": 1.43,
+      "centrality": 7.53,
+      "cross_reference_count": 66,
+      "core_concepts": 1,
+      "total_concepts": 1
+    },
+    "key_contributions": [
+      "Foundation Model"
+    ],
+    "rank": 44
+  },
+  "第4章__大语言模型__4.2.3 提示学习与指令微调 (Prompt Learning and Instruction Tuning)__Demystifying Instruction Mixing for Fine-tuning Large Language Models": {
+    "overall_score": 0.7,
+    "tier": "peripheral",
+    "metrics": {
+      "concept_coverage": 0.0,
+      "centrality": 1.75,
+      "cross_reference_count": 2,
+      "core_concepts": 0,
+      "total_concepts": 0
+    },
+    "key_contributions": [],
+    "rank": 149
+  },
+  "第4章__大语言模型__4.2.3 提示学习与指令微调 (Prompt Learning and Instruction Tuning)__Finetuned Language Models Are Zero-Shot Learners": {
+    "overall_score": 2.32,
+    "tier": "peripheral",
+    "metrics": {
+      "concept_coverage": 0.0,
+      "centrality": 5.8,
+      "cross_reference_count": 45,
+      "core_concepts": 0,
+      "total_concepts": 0
+    },
+    "key_contributions": [],
+    "rank": 130
+  },
+  "第4章__大语言模型__4.2.3 提示学习与指令微调 (Prompt Learning and Instruction Tuning)__Instruction Tuning survey": {
+    "overall_score": 5.76,
+    "tier": "relevant",
+    "metrics": {
+      "concept_coverage": 1.43,
+      "centrality": 7.34,
+      "cross_reference_count": 74,
+      "core_concepts": 1,
+      "total_concepts": 1
+    },
+    "key_contributions": [
+      "Foundation Model"
+    ],
+    "rank": 46
+  },
+  "第4章__大语言模型__4.2.3 提示学习与指令微调 (Prompt Learning and Instruction Tuning)__Language Models are Few-Shot Learners": {
+    "overall_score": 2.33,
+    "tier": "peripheral",
+    "metrics": {
+      "concept_coverage": 0.0,
+      "centrality": 5.81,
+      "cross_reference_count": 24,
+      "core_concepts": 0,
+      "total_concepts": 0
+    },
+    "key_contributions": [],
+    "rank": 129
+  },
+  "第4章__大语言模型__4.2.3 提示学习与指令微调 (Prompt Learning and Instruction Tuning)__Language Models are Unsupervised Multitask Learners": {
+    "overall_score": 4.79,
+    "tier": "relevant",
+    "metrics": {
+      "concept_coverage": 1.43,
+      "centrality": 8.12,
+      "cross_reference_count": 36,
+      "core_concepts": 1,
+      "total_concepts": 1
+    },
+    "key_contributions": [
+      "Transformer"
+    ],
+    "rank": 88
+  },
+  "第4章__大语言模型__4.2.3 提示学习与指令微调 (Prompt Learning and Instruction Tuning)__Multitask Prompted Training Enables Zero-Shot Task Generalization": {
+    "overall_score": 5.66,
+    "tier": "relevant",
+    "metrics": {
+      "concept_coverage": 1.43,
+      "centrality": 7.09,
+      "cross_reference_count": 89,
+      "core_concepts": 1,
+      "total_concepts": 1
+    },
+    "key_contributions": [
+      "Foundation Model"
+    ],
+    "rank": 56
+  },
+  "第4章__大语言模型__4.2.3 提示学习与指令微调 (Prompt Learning and Instruction Tuning)__Training language models to follow instructions with human feedback": {
+    "overall_score": 5.72,
+    "tier": "relevant",
+    "metrics": {
+      "concept_coverage": 1.43,
+      "centrality": 7.22,
+      "cross_reference_count": 81,
+      "core_concepts": 1,
+      "total_concepts": 1
+    },
+    "key_contributions": [
+      "Foundation Model"
+    ],
+    "rank": 50
+  },
+  "第4章__大语言模型__4.2.4 大语言模型与地学应用__ClimateGPT": {
+    "overall_score": 5.65,
+    "tier": "relevant",
+    "metrics": {
+      "concept_coverage": 1.43,
+      "centrality": 7.06,
+      "cross_reference_count": 90,
+      "core_concepts": 1,
+      "total_concepts": 1
+    },
+    "key_contributions": [
+      "Foundation Model"
+    ],
+    "rank": 58
+  },
+  "第4章__大语言模型__4.2.4 大语言模型与地学应用__GEO-Bench_ Toward Foundation Models for Earth Monitoring": {
+    "overall_score": 6.63,
+    "tier": "important",
+    "metrics": {
+      "concept_coverage": 2.86,
+      "centrality": 6.94,
+      "cross_reference_count": 62,
+      "core_concepts": 2,
+      "total_concepts": 2
+    },
+    "key_contributions": [
+      "Foundation Model",
+      "Remote Sensing"
+    ],
+    "rank": 31
+  },
+  "第4章__大语言模型__4.2.4 大语言模型与地学应用__GeoGPT.RAG Technical Report": {
+    "overall_score": 2.87,
+    "tier": "peripheral",
+    "metrics": {
+      "concept_coverage": 0.0,
+      "centrality": 7.18,
+      "cross_reference_count": 69,
+      "core_concepts": 0,
+      "total_concepts": 0
+    },
+    "key_contributions": [],
+    "rank": 118
+  },
+  "第4章__大语言模型__4.2.4 大语言模型与地学应用__GeoGPT_ An Open Large Language Model System For Geoscientists": {
+    "overall_score": 6.18,
+    "tier": "important",
+    "metrics": {
+      "concept_coverage": 1.43,
+      "centrality": 8.39,
+      "cross_reference_count": 72,
+      "core_concepts": 1,
+      "total_concepts": 1
+    },
+    "key_contributions": [
+      "Foundation Model"
+    ],
+    "rank": 37
+  },
+  "第4章__大语言模型__4.2.4 大语言模型与地学应用__K2_ A Foundation Language Model for Geoscience Knowledge Understanding and Utilization": {
+    "overall_score": 5.67,
+    "tier": "relevant",
+    "metrics": {
+      "concept_coverage": 1.43,
+      "centrality": 7.11,
+      "cross_reference_count": 88,
+      "core_concepts": 1,
+      "total_concepts": 1
+    },
+    "key_contributions": [
+      "Foundation Model"
+    ],
+    "rank": 54
+  },
+  "第4章__大语言模型__4.2.4 大语言模型与地学应用__OceanGPT": {
+    "overall_score": 5.65,
+    "tier": "relevant",
+    "metrics": {
+      "concept_coverage": 1.43,
+      "centrality": 7.05,
+      "cross_reference_count": 91,
+      "core_concepts": 1,
+      "total_concepts": 1
+    },
+    "key_contributions": [
+      "Foundation Model"
+    ],
+    "rank": 59
+  },
+  "第4章__知识图谱相关文献__1": {
+    "overall_score": 4.68,
+    "tier": "relevant",
+    "metrics": {
+      "concept_coverage": 2.86,
+      "centrality": 6.46,
+      "cross_reference_count": 52,
+      "core_concepts": 2,
+      "total_concepts": 2
+    },
+    "key_contributions": [
+      "Graph Neural Network",
+      "Transformer"
+    ],
+    "rank": 91
+  },
+  "第4章__知识图谱相关文献__10": {
+    "overall_score": 3.4,
+    "tier": "peripheral",
+    "metrics": {
+      "concept_coverage": 0.0,
+      "centrality": 8.51,
+      "cross_reference_count": 36,
+      "core_concepts": 0,
+      "total_concepts": 0
+    },
+    "key_contributions": [],
+    "rank": 115
+  },
+  "第4章__知识图谱相关文献__11": {
+    "overall_score": 2.3,
+    "tier": "peripheral",
+    "metrics": {
+      "concept_coverage": 0.0,
+      "centrality": 5.75,
+      "cross_reference_count": 51,
+      "core_concepts": 0,
+      "total_concepts": 0
+    },
+    "key_contributions": [],
+    "rank": 140
+  },
+  "第4章__知识图谱相关文献__12": {
+    "overall_score": 2.86,
+    "tier": "peripheral",
+    "metrics": {
+      "concept_coverage": 0.0,
+      "centrality": 7.15,
+      "cross_reference_count": 70,
+      "core_concepts": 0,
+      "total_concepts": 0
+    },
+    "key_contributions": [],
+    "rank": 121
+  },
+  "第4章__知识图谱相关文献__13": {
+    "overall_score": 3.72,
+    "tier": "peripheral",
+    "metrics": {
+      "concept_coverage": 1.43,
+      "centrality": 6.29,
+      "cross_reference_count": 62,
+      "core_concepts": 1,
+      "total_concepts": 1
+    },
+    "key_contributions": [
+      "multimodal"
+    ],
+    "rank": 108
+  },
+  "第4章__知识图谱相关文献__14": {
+    "overall_score": 2.3,
+    "tier": "peripheral",
+    "metrics": {
+      "concept_coverage": 0.0,
+      "centrality": 5.75,
+      "cross_reference_count": 44,
+      "core_concepts": 0,
+      "total_concepts": 0
+    },
+    "key_contributions": [],
+    "rank": 141
+  },
+  "第4章__知识图谱相关文献__15": {
+    "overall_score": 3.79,
+    "tier": "peripheral",
+    "metrics": {
+      "concept_coverage": 1.43,
+      "centrality": 6.46,
+      "cross_reference_count": 50,
+      "core_concepts": 1,
+      "total_concepts": 1
+    },
+    "key_contributions": [
+      "multimodal"
+    ],
+    "rank": 107
+  },
+  "第4章__知识图谱相关文献__16": {
+    "overall_score": 4.19,
+    "tier": "relevant",
+    "metrics": {
+      "concept_coverage": 2.86,
+      "centrality": 6.08,
+      "cross_reference_count": 59,
+      "core_concepts": 2,
+      "total_concepts": 2
+    },
+    "key_contributions": [
+      "GIS",
+      "multimodal"
+    ],
+    "rank": 103
+  },
+  "第4章__知识图谱相关文献__17": {
+    "overall_score": 6.54,
+    "tier": "important",
+    "metrics": {
+      "concept_coverage": 2.86,
+      "centrality": 6.7,
+      "cross_reference_count": 76,
+      "core_concepts": 2,
+      "total_concepts": 2
+    },
+    "key_contributions": [
+      "Foundation Model",
+      "Remote Sensing"
+    ],
+    "rank": 34
+  },
+  "第4章__知识图谱相关文献__18": {
+    "overall_score": 3.36,
+    "tier": "peripheral",
+    "metrics": {
+      "concept_coverage": 0.0,
+      "centrality": 8.4,
+      "cross_reference_count": 38,
+      "core_concepts": 0,
+      "total_concepts": 0
+    },
+    "key_contributions": [],
+    "rank": 116
+  },
+  "第4章__知识图谱相关文献__19": {
+    "overall_score": 5.65,
+    "tier": "relevant",
+    "metrics": {
+      "concept_coverage": 1.43,
+      "centrality": 7.05,
+      "cross_reference_count": 91,
+      "core_concepts": 1,
+      "total_concepts": 1
+    },
+    "key_contributions": [
+      "Foundation Model"
+    ],
+    "rank": 60
+  },
+  "第4章__知识图谱相关文献__2": {
+    "overall_score": 3.93,
+    "tier": "peripheral",
+    "metrics": {
+      "concept_coverage": 0.0,
+      "centrality": 9.82,
+      "cross_reference_count": 24,
+      "core_concepts": 0,
+      "total_concepts": 0
+    },
+    "key_contributions": [],
+    "rank": 105
+  },
+  "第4章__知识图谱相关文献__20": {
+    "overall_score": 5.96,
+    "tier": "relevant",
+    "metrics": {
+      "concept_coverage": 1.43,
+      "centrality": 7.84,
+      "cross_reference_count": 91,
+      "core_concepts": 1,
+      "total_concepts": 1
+    },
+    "key_contributions": [
+      "Foundation Model"
+    ],
+    "rank": 42
+  },
+  "第4章__知识图谱相关文献__21": {
+    "overall_score": 2.87,
+    "tier": "peripheral",
+    "metrics": {
+      "concept_coverage": 0.0,
+      "centrality": 7.18,
+      "cross_reference_count": 69,
+      "core_concepts": 0,
+      "total_concepts": 0
+    },
+    "key_contributions": [],
+    "rank": 119
+  },
+  "第4章__知识图谱相关文献__22": {
+    "overall_score": 5.97,
+    "tier": "relevant",
+    "metrics": {
+      "concept_coverage": 1.43,
+      "centrality": 7.85,
+      "cross_reference_count": 56,
+      "core_concepts": 1,
+      "total_concepts": 1
+    },
+    "key_contributions": [
+      "Foundation Model"
+    ],
+    "rank": 40
+  },
+  "第4章__知识图谱相关文献__23": {
+    "overall_score": 2.3,
+    "tier": "peripheral",
+    "metrics": {
+      "concept_coverage": 0.0,
+      "centrality": 5.75,
+      "cross_reference_count": 68,
+      "core_concepts": 0,
+      "total_concepts": 0
+    },
+    "key_contributions": [],
+    "rank": 142
+  },
+  "第4章__知识图谱相关文献__24": {
+    "overall_score": 1.3,
+    "tier": "peripheral",
+    "metrics": {
+      "concept_coverage": 0.0,
+      "centrality": 3.25,
+      "cross_reference_count": 5,
+      "core_concepts": 0,
+      "total_concepts": 0
+    },
+    "key_contributions": [],
+    "rank": 147
+  },
+  "第4章__知识图谱相关文献__26": {
+    "overall_score": 6.6,
+    "tier": "important",
+    "metrics": {
+      "concept_coverage": 4.29,
+      "centrality": 6.21,
+      "cross_reference_count": 77,
+      "core_concepts": 3,
+      "total_concepts": 3
+    },
+    "key_contributions": [
+      "Earth Observation",
+      "Foundation Model",
+      "Geospatial"
+    ],
+    "rank": 32
+  },
+  "第4章__知识图谱相关文献__27": {
+    "overall_score": 5.75,
+    "tier": "relevant",
+    "metrics": {
+      "concept_coverage": 1.43,
+      "centrality": 7.3,
+      "cross_reference_count": 76,
+      "core_concepts": 1,
+      "total_concepts": 1
+    },
+    "key_contributions": [
+      "Foundation Model"
+    ],
+    "rank": 48
+  },
+  "第4章__知识图谱相关文献__28": {
+    "overall_score": 5.76,
+    "tier": "relevant",
+    "metrics": {
+      "concept_coverage": 1.43,
+      "centrality": 7.32,
+      "cross_reference_count": 75,
+      "core_concepts": 1,
+      "total_concepts": 1
+    },
+    "key_contributions": [
+      "Foundation Model"
+    ],
+    "rank": 47
+  },
+  "第4章__知识图谱相关文献__3": {
+    "overall_score": 3.7,
+    "tier": "peripheral",
+    "metrics": {
+      "concept_coverage": 0.0,
+      "centrality": 9.24,
+      "cross_reference_count": 28,
+      "core_concepts": 0,
+      "total_concepts": 0
+    },
+    "key_contributions": [],
+    "rank": 109
+  },
+  "第4章__知识图谱相关文献__31": {
+    "overall_score": 6.13,
+    "tier": "important",
+    "metrics": {
+      "concept_coverage": 2.86,
+      "centrality": 6.53,
+      "cross_reference_count": 71,
+      "core_concepts": 2,
+      "total_concepts": 2
+    },
+    "key_contributions": [
+      "Foundation Model",
+      "Weather Forecasting"
+    ],
+    "rank": 39
+  },
+  "第4章__知识图谱相关文献__5": {
+    "overall_score": 2.31,
+    "tier": "peripheral",
+    "metrics": {
+      "concept_coverage": 0.0,
+      "centrality": 5.78,
+      "cross_reference_count": 9,
+      "core_concepts": 0,
+      "total_concepts": 0
+    },
+    "key_contributions": [],
+    "rank": 135
+  },
+  "第4章__知识图谱相关文献__6": {
+    "overall_score": 2.3,
+    "tier": "peripheral",
+    "metrics": {
+      "concept_coverage": 0.0,
+      "centrality": 5.75,
+      "cross_reference_count": 53,
+      "core_concepts": 0,
+      "total_concepts": 0
+    },
+    "key_contributions": [],
+    "rank": 143
+  },
+  "第4章__知识图谱相关文献__8": {
+    "overall_score": 3.7,
+    "tier": "peripheral",
+    "metrics": {
+      "concept_coverage": 0.0,
+      "centrality": 9.24,
+      "cross_reference_count": 28,
+      "core_concepts": 0,
+      "total_concepts": 0
+    },
+    "key_contributions": [],
+    "rank": 110
+  },
+  "第4章__知识图谱相关文献__9": {
+    "overall_score": 3.15,
+    "tier": "peripheral",
+    "metrics": {
+      "concept_coverage": 0.0,
+      "centrality": 7.88,
+      "cross_reference_count": 46,
+      "core_concepts": 0,
+      "total_concepts": 0
+    },
+    "key_contributions": [],
+    "rank": 117
+  }
+}

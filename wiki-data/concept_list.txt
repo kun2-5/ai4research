@@ -1,0 +1,274 @@
+# Domain Concept List (Canonical English)
+# Generated: 2026-04-18 03:53:51
+# Total Concepts: 269
+# Note: Chinese equivalents and aliases are stored in index.json
+
+3D Neural Networks
+AI impacts
+Ablation
+Accelerating Global High
+Accurate
+Action Models Transfer
+Adaptive Fourier Neural
+Additionally
+Advance Earth Observation
+After
+Agent
+An Embodied Multimodal
+Arctic
+Artificial Intelligence
+Atmospheric Dynamics
+Autonomous
+Autonomous Agents
+Autonomous GIS
+Autonomous Navigation
+Bench
+Benchmarking
+Better
+Beyond
+Big Data
+Built
+Causal
+Causal Reasoning
+Challenges
+ChatGPT
+China
+Clima
+Climate
+Climate Change
+Climate Model
+Composing Zero
+Comprehensive
+Computational
+Computing
+Current
+Data Assimilation
+Data-Driven
+Deep Learning
+Despite
+Destination Earth
+Differentiable
+Diffusion
+Diffusion Model
+Diffusion Transformers
+Digital Twin
+Digital Twin Basin
+Digital Twin Earth
+Discovering Symbolic Models
+ECMWF
+ERA5
+Earth
+Earth Observation
+Earth System
+Earth System Models
+Earth system model
+Earth system sciences
+EarthGPT
+Embodied Intelligence
+Embodiment
+Ensemble Forecasting
+Error Accumulation
+European Union
+Evaluate Vegetation Modeling
+Evaluated
+Examining
+Execution Layer
+Experiments
+Exploring
+Extraterrestrial Surface
+Extreme Weather
+Extreme Weather Events
+Extreme Weather Simulation
+Focusing
+Foundation Language Model
+Foundation Models
+Future
+GIS
+GenCast
+Generative AI
+GeoAI
+GeoAgent
+Geographic Information
+Geoscience Knowledge Understanding
+Geospatial
+Geospatial knowledge
+Global Weather Forecasting
+Google Cloud
+Graph
+Graph Neural Networks
+Growth
+Hamiltonians
+Hierarchical
+Hierarchical Temporal Aggregation
+However
+Hybrid
+Hydrology
+Idealized Model
+Impact
+Importantly
+Integrating
+Internet of Things
+Interpretability
+Language
+Language Model
+Large
+Large Language Models
+Large Model
+Learning
+Limitations
+Limits
+Llama
+Machine Learning
+Machine Learning Framework
+Machine Learning Ocean
+Mediterranean
+Mediterranean Basin
+Mesobot
+Meteorological AI
+Multi
+Nature Review
+Neural
+Neural Networks
+NeuralGCM
+Newtonian
+Numerical Weather Prediction
+OpenStreetMap
+Operators
+Opportunities
+Orchestrating Scientists
+PaLM-E
+Pangu
+Pearson
+Physical Intelligence
+Physical Model
+Physics
+Physics Reports
+Planetary Boundaries
+Planned
+Planning Layer
+Precipitation Forecasting
+Probe
+Published
+Purely
+Rather
+Reanalysis Data
+Remarkably
+Remote Sensing
+Resolution Weather Forecasting
+Review Layer
+Robotic Control
+Satellite
+Scientific
+Scientific Discovery
+Shapefile
+Shapefile processing
+Signal
+Socratic Models
+Solmissus
+Spatial Data
+Spatial Downscaling
+Storm
+Street
+Subgrid Parameterizations
+Symbolic Manipulation
+Temporal Aggregation
+The Destination Earth
+This Perspective
+This Technical Review
+Through
+Traditional
+Trained
+Transformer
+Tropical Cyclone
+Universal Multi
+Unlike
+Updated World
+Utilization
+Viability
+Vision
+Vision Transformers
+Vision-Language-Action
+Water Cycle
+Weather
+Weather Forecasting
+Web Knowledge
+World
+World Model
+World3 model
+autonomous GIS
+autonomous discovery
+autonomous underwater vehicle
+behavioral tracking
+causal discovery
+complex systems
+computer vision
+convection
+cosmology
+data centers
+differentiable modelling
+diffusion transformer
+domain adaptation
+drug discovery
+equation discovery
+explainable AI
+foundation models
+genetic programming
+geometric deep learning
+geoscience
+geosciences
+geospatial artificial intelligence
+graph neural networks
+gray zone
+green transition
+gross primary productivity
+hydrology
+imitation learning
+inductive bias
+instruction tuning
+interpretability
+large language models
+limits to growth
+marine robotics
+midwater
+multi-agent framework
+multi-agent systems
+multi-modal large language model
+multi-sensor
+multimodal language model
+multimodal learning
+multimodal reasoning
+ocean modeling
+ocean twilight zone
+open-source
+physical constraints
+physics
+physics-informed machine learning
+planetary boundaries
+population density
+precipitation nowcasting
+process-based models
+prompt engineering
+radar reflectivity
+robotics
+scientific agents
+scientific discovery
+scientific discovery lifecycle
+self-supervised learning
+spatial analysis
+spatial prediction
+structural causal models
+subgrid parameterization
+symbolic regression
+system dynamics
+terrestrial carbon cycle
+time series
+vector data
+vision-language
+zero-shot learning
+数字流域
+智慧水利
+智慧流域
+智能融合
+智能观
+物理流域
+虚拟流域
