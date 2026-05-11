@@ -4,16 +4,34 @@ import { useState, useRef, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { ScrollArea } from "@/components/ui/scroll-area";
+import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
-import { Send, Bot, User, PanelRightClose, PanelRightOpen, Sparkles } from "lucide-react";
+import {
+  Send,
+  Bot,
+  User,
+  PanelRightClose,
+  PanelRightOpen,
+  Sparkles,
+  Wrench,
+  Check,
+} from "lucide-react";
 import type { ChatMessage } from "@/types";
+
+interface ToolCall {
+  id: string;
+  name: string;
+  input?: unknown;
+  resultPreview?: string;
+  completed: boolean;
+}
 
 const initialMessages: ChatMessage[] = [
   {
     id: "welcome",
     role: "assistant",
     content:
-      "你好！我是你的 AI 研究伙伴。我可以帮你探索知识库中的概念和文献，回答研究问题，或者帮你发现新的研究思路。\n\n你想了解什么？",
+      "你好！我是你的 AI 研究伙伴，现在已接入 Claude Agent SDK。我可以帮你探索知识库中的概念和文献，回答研究问题，还能使用工具读取文件、搜索网络。\n\n试试问我：\n• 什么是 ClimaX？\n• 对比 ClimaX 和 SatMamba\n• 阅读 Remote Sensing 的概念卡片\n\n你想了解什么？",
     timestamp: new Date(),
   },
 ];
@@ -23,6 +41,7 @@ export default function AICompanion() {
   const [messages, setMessages] = useState<ChatMessage[]>(initialMessages);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [toolCalls, setToolCalls] = useState<Record<string, ToolCall[]>>({});
   const scrollRef = useRef<HTMLDivElement>(null);
 
   // Auto-scroll to bottom
@@ -33,7 +52,7 @@ export default function AICompanion() {
       ) as HTMLElement | null;
       if (vp) vp.scrollTop = vp.scrollHeight;
     }
-  }, [messages]);
+  }, [messages, toolCalls]);
 
   const handleSend = async () => {
     if (!input.trim() || isLoading) return;
@@ -51,39 +70,30 @@ export default function AICompanion() {
     setIsLoading(true);
 
     try {
-      // Build conversation history (last 20 messages to stay within context)
       const history = newMessages.slice(-20).map((m) => ({
         role: m.role,
         content: m.content,
       }));
 
-      const response = await fetch("/api/ai/chat", {
+      const response = await fetch("/api/ai/agent", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ messages: history }),
       });
 
-      if (!response.ok) {
-        throw new Error(await response.text());
-      }
+      if (!response.ok) throw new Error(await response.text());
 
-      // Read SSE stream
       const reader = response.body?.getReader();
       if (!reader) throw new Error("No response body");
 
       const decoder = new TextDecoder();
       const aiId = (Date.now() + 1).toString();
       let aiContent = "";
+      let currentToolCalls: ToolCall[] = [];
 
-      // Add placeholder AI message
       setMessages((prev) => [
         ...prev,
-        {
-          id: aiId,
-          role: "assistant",
-          content: "",
-          timestamp: new Date(),
-        },
+        { id: aiId, role: "assistant", content: "", timestamp: new Date() },
       ]);
 
       while (true) {
@@ -94,31 +104,73 @@ export default function AICompanion() {
         const lines = chunk.split("\n");
 
         for (const line of lines) {
-          if (line.startsWith("data: ")) {
-            try {
-              const data = JSON.parse(line.slice(6));
-              if (data.type === "delta" && data.text) {
-                aiContent += data.text;
-                setMessages((prev) =>
-                  prev.map((m) =>
-                    m.id === aiId ? { ...m, content: aiContent } : m
-                  )
-                );
-              }
-            } catch {
-              // skip unparseable lines
+          if (!line.startsWith("data: ")) continue;
+          let data: { type: string; text?: string; name?: string; input?: unknown; preview?: string; tool_use_id?: string; result?: string; num_turns?: number };
+          try { data = JSON.parse(line.slice(6)); } catch { continue; }
+
+          switch (data.type) {
+            case "delta":
+              // Streaming text from agent thinking
+              aiContent += data.text || "";
+              setMessages((prev) =>
+                prev.map((m) => (m.id === aiId ? { ...m, content: aiContent } : m))
+              );
+              break;
+
+            case "text":
+              // Final assistant response — replace or append
+              aiContent = aiContent ? aiContent + "\n\n" + (data.text || "") : (data.text || "");
+              setMessages((prev) =>
+                prev.map((m) => (m.id === aiId ? { ...m, content: aiContent } : m))
+              );
+              break;
+
+            case "tool_call": {
+              const tc: ToolCall = {
+                id: `tool-${Date.now()}-${currentToolCalls.length}`,
+                name: data.name || "unknown",
+                input: data.input,
+                completed: false,
+              };
+              currentToolCalls = [...currentToolCalls, tc];
+              setToolCalls((prev) => ({ ...prev, [aiId]: currentToolCalls }));
+              break;
             }
+
+            case "tool_result": {
+              currentToolCalls = currentToolCalls.map((tc) =>
+                tc.completed
+                  ? tc
+                  : { ...tc, completed: true, resultPreview: data.preview }
+              );
+              setToolCalls((prev) => ({ ...prev, [aiId]: currentToolCalls }));
+              break;
+            }
+
+            case "done":
+              // Agent finished
+              break;
+
+            case "error":
+              setMessages((prev) =>
+                prev.map((m) =>
+                  m.id === aiId
+                    ? { ...m, content: m.content || `错误: ${data.text || "未知错误"}` }
+                    : m
+                )
+              );
+              break;
           }
         }
       }
     } catch (err) {
-      console.error("AI Chat error:", err);
+      console.error("Agent error:", err);
       setMessages((prev) => [
         ...prev,
         {
           id: (Date.now() + 2).toString(),
           role: "assistant",
-          content: "抱歉，AI 服务暂时不可用，请稍后重试。",
+          content: "抱歉，AI Agent 暂时不可用，请稍后重试。",
           timestamp: new Date(),
         },
       ]);
@@ -136,7 +188,6 @@ export default function AICompanion() {
 
   return (
     <>
-      {/* Toggle button when collapsed */}
       {!isOpen && (
         <Button
           variant="outline"
@@ -148,91 +199,112 @@ export default function AICompanion() {
         </Button>
       )}
 
-      {/* AI Companion Panel */}
       <div
         className={cn(
           "flex flex-col border-l bg-background transition-all duration-300 ease-in-out",
           isOpen ? "w-96 opacity-100" : "w-0 opacity-0 overflow-hidden"
         )}
       >
-        {/* Header */}
         <div className="flex h-14 items-center justify-between border-b px-4">
           <div className="flex items-center gap-2">
             <Sparkles className="h-5 w-5 text-primary" />
-            <span className="font-semibold">AI 研究伙伴</span>
+            <span className="font-semibold">AI Agent</span>
           </div>
-          <Button
-            variant="ghost"
-            size="icon"
-            onClick={() => setIsOpen(false)}
-          >
+          <Button variant="ghost" size="icon" onClick={() => setIsOpen(false)}>
             <PanelRightClose className="h-4 w-4" />
           </Button>
         </div>
 
-        {/* Messages */}
         <ScrollArea className="flex-1 px-4 py-4" ref={scrollRef}>
           <div className="flex flex-col gap-4">
-            {messages.map((msg) => (
-              <div
-                key={msg.id}
-                className={cn(
-                  "flex gap-3",
-                  msg.role === "user" ? "flex-row-reverse" : "flex-row"
-                )}
-              >
-                <div
-                  className={cn(
-                    "flex h-8 w-8 shrink-0 items-center justify-center rounded-full",
-                    msg.role === "user"
-                      ? "bg-primary text-primary-foreground"
-                      : "bg-muted"
-                  )}
-                >
-                  {msg.role === "user" ? (
-                    <User className="h-4 w-4" />
-                  ) : (
-                    <Bot className="h-4 w-4" />
+            {messages.map((msg) => {
+              const msgTools = toolCalls[msg.id] || [];
+              return (
+                <div key={msg.id}>
+                  <div
+                    className={cn(
+                      "flex gap-3",
+                      msg.role === "user" ? "flex-row-reverse" : "flex-row"
+                    )}
+                  >
+                    <div
+                      className={cn(
+                        "flex h-8 w-8 shrink-0 items-center justify-center rounded-full",
+                        msg.role === "user"
+                          ? "bg-primary text-primary-foreground"
+                          : "bg-muted"
+                      )}
+                    >
+                      {msg.role === "user" ? (
+                        <User className="h-4 w-4" />
+                      ) : (
+                        <Bot className="h-4 w-4" />
+                      )}
+                    </div>
+                    <div
+                      className={cn(
+                        "max-w-[80%] rounded-2xl px-4 py-2.5 text-sm leading-relaxed",
+                        msg.role === "user"
+                          ? "bg-primary text-primary-foreground"
+                          : "bg-muted"
+                      )}
+                    >
+                      {msg.content ? (
+                        msg.content.split("\n").map((line, i) => (
+                          <p key={i} className={i > 0 ? "mt-2" : ""}>
+                            {line}
+                          </p>
+                        ))
+                      ) : (
+                        <span className="animate-pulse">...</span>
+                      )}
+                    </div>
+                  </div>
+
+                  {/* Tool call indicators */}
+                  {msgTools.length > 0 && (
+                    <div className="ml-11 mt-1.5 space-y-1">
+                      {msgTools.map((tc) => (
+                        <div
+                          key={tc.id}
+                          className="flex items-center gap-1.5 text-[11px] text-muted-foreground"
+                        >
+                          {tc.completed ? (
+                            <Check className="h-3 w-3 text-green-500" />
+                          ) : (
+                            <Wrench className="h-3 w-3 animate-spin" />
+                          )}
+                          <span className="font-medium">{tc.name}</span>
+                          {tc.resultPreview && (
+                            <span className="truncate max-w-[200px]">
+                              — {tc.resultPreview}
+                            </span>
+                          )}
+                        </div>
+                      ))}
+                    </div>
                   )}
                 </div>
-                <div
-                  className={cn(
-                    "max-w-[80%] rounded-2xl px-4 py-2.5 text-sm leading-relaxed",
-                    msg.role === "user"
-                      ? "bg-primary text-primary-foreground"
-                      : "bg-muted"
-                  )}
-                >
-                  {msg.content ? (
-                    msg.content.split("\n").map((line, i) => (
-                      <p key={i} className={i > 0 ? "mt-2" : ""}>
-                        {line}
-                      </p>
-                    ))
-                  ) : (
-                    <span className="animate-pulse">...</span>
-                  )}
-                </div>
-              </div>
-            ))}
+              );
+            })}
+
             {isLoading && !messages.some((m) => m.content === "") && (
               <div className="flex gap-3">
                 <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-muted">
                   <Bot className="h-4 w-4 animate-pulse" />
                 </div>
                 <div className="rounded-2xl bg-muted px-4 py-2.5 text-sm">
-                  <span className="animate-pulse">思考中...</span>
+                  <span className="animate-pulse">Agent 启动中...</span>
                 </div>
               </div>
             )}
           </div>
         </ScrollArea>
 
-        {/* Input */}
         <div className="border-t p-4">
           <div className="flex gap-2">
             <Textarea
-              placeholder="输入你的研究问题..."
+              placeholder="输入你的研究问题，Agent 可以使用工具..."
               value={input}
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={handleKeyDown}
@@ -249,7 +321,7 @@ export default function AICompanion() {
             </Button>
           </div>
           <p className="mt-2 text-[10px] text-muted-foreground text-center">
-            AI 回答基于知识库内容，请核实重要信息
+            Claude Agent SDK — 可使用工具、读写文件
           </p>
         </div>
       </div>
