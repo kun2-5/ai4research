@@ -35,14 +35,28 @@ export default function AICompanion() {
 
   // Init: load last session, or show welcome
   useEffect(() => {
-    const savedId = localStorage.getItem(SESSION_KEY);
-    fetchSessions();
-    if (savedId) {
-      loadSessionMessages(savedId);
-    } else {
-      setMessages([{ id: "welcome", role: "assistant", content: WELCOME, timestamp: new Date() }]);
-      setReady(true);
-    }
+    let cancelled = false;
+    const timeout = setTimeout(() => {
+      if (!cancelled) {
+        setReady(true);
+      }
+    }, 3000);
+
+    (async () => {
+      const savedId = localStorage.getItem(SESSION_KEY);
+      fetchSessions();
+      if (savedId) {
+        await loadSessionMessages(savedId);
+      } else {
+        setMessages([{ id: "welcome", role: "assistant", content: WELCOME, timestamp: new Date() }]);
+        setReady(true);
+      }
+    })();
+
+    return () => {
+      cancelled = true;
+      clearTimeout(timeout);
+    };
   }, []);
 
   const fetchSessions = async () => {

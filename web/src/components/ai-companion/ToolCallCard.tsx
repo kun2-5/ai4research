@@ -40,7 +40,7 @@ export default function ToolCallCard({ tool }: { tool: ToolCall }) {
         )}
         <span className="text-muted-foreground shrink-0">{icon}</span>
         <span className="font-medium">{tool.name}</span>
-        {tool.input && (
+        {tool.input != null && (
           <span className="text-muted-foreground truncate">
             {typeof tool.input === "object"
               ? (tool.input as Record<string, unknown>).file_path as string
@@ -59,7 +59,7 @@ export default function ToolCallCard({ tool }: { tool: ToolCall }) {
 
       {expanded && (
         <div className="border-t px-3 py-2 space-y-2 bg-muted/20">
-          {tool.input && (
+          {tool.input != null && (
             <div>
               <p className="text-[10px] font-medium text-muted-foreground mb-1">输入参数</p>
               <pre className="text-[11px] bg-muted rounded p-2 overflow-x-auto whitespace-pre-wrap">

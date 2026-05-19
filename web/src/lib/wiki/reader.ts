@@ -309,7 +309,7 @@ export function getLiterature(tierFilter?: string): Literature[] {
     results.push({
       id: slugify(id),
       title: entry.title,
-      year: entry.year,
+      year: entry.year ?? undefined,
       tier: tierLabel as Literature["tier"],
       abstract: undefined,
       concepts: entry.concepts.length > 0 ? entry.concepts : (imp?.key_contributions ?? []),
