@@ -43,7 +43,10 @@ export default function AICompanion() {
     }, 3000);
 
     (async () => {
-      const savedId = localStorage.getItem(SESSION_KEY);
+      let savedId: string | null = null;
+      try {
+        savedId = localStorage.getItem(SESSION_KEY);
+      } catch { /* localStorage may be disabled */ }
       fetchSessions();
       if (savedId) {
         await loadSessionMessages(savedId);
@@ -87,7 +90,7 @@ export default function AICompanion() {
       }
     } catch { /* ignore */ }
     // Session not found or empty — clear stale localStorage and show welcome
-    localStorage.removeItem(SESSION_KEY);
+    try { localStorage.removeItem(SESSION_KEY); } catch { /* ignore */ }
     setSessionId(null);
     setMessages([{ id: "welcome", role: "assistant", content: WELCOME, timestamp: new Date() }]);
     setReady(true);
@@ -95,14 +98,14 @@ export default function AICompanion() {
 
   const switchSession = (id: string) => {
     if (id === sessionId) { setShowSessions(false); return; }
-    localStorage.setItem(SESSION_KEY, id);
+    try { localStorage.setItem(SESSION_KEY, id); } catch { /* ignore */ }
     setToolCalls({});
     setShowSessions(false);
     loadSessionMessages(id);
   };
 
   const newSession = () => {
-    localStorage.removeItem(SESSION_KEY);
+    try { localStorage.removeItem(SESSION_KEY); } catch { /* ignore */ }
     setSessionId(null);
     setToolCalls({});
     setShowSessions(false);
@@ -183,7 +186,7 @@ export default function AICompanion() {
             case "system":
               // SDK auto-generated session ID — save it
               if (data.session_id) {
-                localStorage.setItem(SESSION_KEY, data.session_id);
+                try { localStorage.setItem(SESSION_KEY, data.session_id); } catch { /* ignore */ }
                 if (!sessionId) setSessionId(data.session_id);
               }
               break;
