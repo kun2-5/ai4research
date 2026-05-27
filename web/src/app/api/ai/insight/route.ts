@@ -67,6 +67,7 @@ export async function POST(request: NextRequest) {
             maxTurns: 8,
             cwd: process.cwd(),
             settingSources: ["project"],
+            pathToClaudeCodeExecutable: "/home/km/.local/bin/claude",
           },
         });
 
