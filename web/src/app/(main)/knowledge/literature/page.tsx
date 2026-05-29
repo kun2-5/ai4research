@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import LiteratureCard from "@/components/knowledge/LiteratureCard";
-import { tierColors, tierLabels } from "@/lib/data/mock";
+import { tierColors, tierLabels } from "@/lib/constants";
 import type { Literature } from "@/types";
 import { Search, FileText, Loader2 } from "lucide-react";
 import { cn } from "@/lib/utils";

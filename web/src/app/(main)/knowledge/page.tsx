@@ -52,15 +52,22 @@ export default function KnowledgeSpacePage() {
           </Card>
         </Link>
 
-        <Card className="h-full opacity-60">
-          <CardHeader>
-            <Network className="h-10 w-10 text-muted-foreground mb-2" />
-            <CardTitle>知识图谱</CardTitle>
-            <CardDescription>
-              交互式可视化概念与文献的关系网络（开发中）
-            </CardDescription>
-          </CardHeader>
-        </Card>
+        <Link href="/knowledge/graph">
+          <Card className="h-full hover:border-primary/50 hover:shadow-md transition-all cursor-pointer group">
+            <CardHeader>
+              <Network className="h-10 w-10 text-primary mb-2" />
+              <CardTitle>知识图谱</CardTitle>
+              <CardDescription>
+                交互式可视化概念与文献的关系网络
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <Button variant="ghost" className="group-hover:translate-x-1 transition-transform">
+                浏览图谱 <ArrowRight className="ml-1 h-4 w-4" />
+              </Button>
+            </CardContent>
+          </Card>
+        </Link>
       </div>
     </div>
   );

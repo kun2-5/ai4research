@@ -1,6 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { tierColors, tierLabels } from "@/lib/data/mock";
+import { tierColors, tierLabels } from "@/lib/constants";
 import type { Literature } from "@/types";
 import { Users, Calendar, FileText } from "lucide-react";
 
